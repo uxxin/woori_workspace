@@ -7,7 +7,7 @@ import TodoForm from "./TodoForm";
 import { useState } from "react";
 
 // TodoBody에서 todo라는 이름의 props를 전달(내려줬음)
-const TodoItem = ({ todo, onUpdate, onChange }) => {
+const TodoItem = ({ todo, onUpdate, onChange, onDelete }) => {
   const [openModal, open] = useState(false);
   const openModalHandler = () => open(true);
   //console.log("TodoItem,", todo);
@@ -45,7 +45,7 @@ const TodoItem = ({ todo, onUpdate, onChange }) => {
       <div className="flex items-center gap-1">
         {/* IconButton은 우리가 만든 component임. 실제 우리가 만든 onClick임/ */}
         <IconButton onClick={openModalHandler} icon={"✏️"} />
-        <IconButton icon={"🗑"} />
+        <IconButton onClick={() => onDelete(todo.id)} icon={"🗑"} />
         {/* Modal이 생성되는 위치 */}
         {openModal &&
           createPortal(

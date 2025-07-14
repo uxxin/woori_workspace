@@ -63,10 +63,21 @@ function App() {
   //   setTodos(newTodos);
   // };
 
+  /**
+   * 2. 할일 수정 기능
+   * @param {*} updateTodo 새롭게 갱신할 할일 객체
+   * 문서화 주석
+   */
+
   const updateTodoHandler = (updateTodo) => {
     const updatedTodos = todos.map((todo) =>
       todo.id === updateTodo.id ? updateTodo : todo
     );
+    setTodos(updatedTodos);
+  };
+
+  const deleteTodoHandler = (id) => {
+    const updatedTodos = todos.filter((todo) => todo.id != id);
     setTodos(updatedTodos);
   };
 
@@ -113,6 +124,7 @@ function App() {
           onUpdate={updateTodoHandler}
           todos={filteredTodos}
           onChange={updateCategoryHandler}
+          onDelete={deleteTodoHandler}
         />
         {/* {todos}는 위에서 setTodos로 관리하는 todos (dummyTodos + 새로 입력한 todo들)이다 */}
       </section>
