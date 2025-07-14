@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "papago_practice",
   "version": "1.0.0",
   "main": "app.js",
@@ -11,3 +12,21 @@
   "license": "ISC",
   "description": ""
 }
+=======
+  "name": "papago_sample",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node serverV3.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "superagent": "^10.2.1"
+  },
+  "type": "module"
+}
+>>>>>>> 0b13971c6e0e0855585277edc4cd8c59ff7d2166
