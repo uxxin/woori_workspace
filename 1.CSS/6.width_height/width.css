@@ -1,0 +1,12 @@
+.width-default {
+    /* width: 100%; */
+}
+
+.width-px {
+    width: 300px;
+}
+
+.width-pct {
+    width: 50%;
+    /* w50p */
+}

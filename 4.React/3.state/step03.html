@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <!-- JSX를 사용하기 위해 필요한 의존성(Babel) 추가 -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const { useState } = React; // React라는 최상위 API 객체에서 useState 프로퍼티를 추출
+
+      const Counter = () => {
+        console.log("Counter 렌더링 됨");
+
+        // 0은 초기값
+        // count - 관리하고 싶은 상태값(Counter라는 컴포넌트 맥락에서)
+        const [count, render] = useState(0);
+
+        // let count = 0;
+
+        const clickHandler = () => {
+          console.log(`count: ${count}`);
+          render(count + 1);
+        };
+
+        return (
+          <div>
+            <div>{count}</div>
+            <button onClick={clickHandler}>Click!</button>
+          </div>
+        );
+      };
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<Counter />);
+    </script>
+  </body>
+</html>
