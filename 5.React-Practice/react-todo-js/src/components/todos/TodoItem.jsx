@@ -4,7 +4,7 @@ import IconButton from "../ui/IconButton";
 
 // TodoBody에서 todo라는 이름의 props를 전달(내려줬음)
 const TodoItem = ({ todo }) => {
-  console.log("TodoItem,", todo);
+  //console.log("TodoItem,", todo);
   return (
     <li className="flex gap-4 justify-between my-4 py-4 px-4 border-[1px] bg-gray-700 rounded-md shadow-xl">
       <div>

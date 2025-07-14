@@ -3,9 +3,11 @@
 import TodoBody from "./components/todos/TodoBody";
 import TodoHeader from "./components/todos/TodoHeader";
 import DefaultLayout from "./layouts/DefaultLayout";
+import Modal from "./components/ui/Modal";
+import { useState } from "react";
 
 //서버에서 받아온 데이터라고 가정
-const dummytodos = [
+const dummyTodos = [
   {
     id: 1,
     title: "React 공부",
@@ -28,6 +30,39 @@ const dummytodos = [
 
 // 해당 컴포넌트의 파일명은 App.jsx(js)로 만듦
 function App() {
+  //dummyTodos를 App.jsx가 관리하는 하나의 상태로 등록
+  const [todos, setTodos] = useState(dummyTodos);
+
+  // 1. 할일 등록 기능
+  // TodoForm으로부터 전달받은 할일 객체를 가지고 todos 배열의 뒤쪽에 추가하는 로직
+  const addTodoHandler = (todo) => {
+    console.log(todo); // TodoForm으로부터 입력된 값들을 잘 전달받았는지
+
+    //TODO: 배열에 추가하는 로직
+    // 새로 작성한 데이터 + 더미데이터
+    todo.id = todos.length + 1;
+    setTodos((todos) => [todo, ...todos]);
+
+    // //이렇게 해도 된다-1
+    // todo.id = todos.length+1;
+    // const updatedTodos = [...todos, todo];
+    // setTodos(updatedTodos);
+
+    // //강사님 방식
+    // const newTodo = {
+    //   id: self.crypto.randomUUID(),
+    //   ...todo,
+    // };
+    // const updatedTodos = [...todos, newTodo];
+    // setTodos(updatedTodos);
+  };
+
+  // const addTodoHandler = (todo) => {
+  //   todos.push(todo);
+  //   const newTodos = todos; //0x100
+  //   setTodos(newTodos);
+  // };
+
   return (
     <DefaultLayout>
       <header>
@@ -49,10 +84,12 @@ function App() {
       </header>
 
       <section className="max-w-xl m-4 mx-auto">
-        <TodoHeader />
+        <TodoHeader onAdd={addTodoHandler} />
 
-        {/* 할일 목록 */}
-        <TodoBody {dummytodos}/>
+        {/* dummyTodos라는 데이터를 todos라는 이름으로 전달 */}
+        {/* TodoBody(dummyTodos)형태로 호출 */}
+        <TodoBody todos={todos} />
+        {/* {todos}는 위에서 setTodos로 관리하는 todos (dummyTodos + 새로 입력한 todo들)이다 */}
       </section>
     </DefaultLayout>
   );
