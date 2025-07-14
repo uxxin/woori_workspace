@@ -76,6 +76,14 @@ function App() {
     return filter === "all" ? true : todo.category === filter;
   });
 
+  // 새로운 카테고리값 newCategory 값과 id 를 통해 해당 항목의 category 변경
+  const updateCategoryHandler = (id, newCategory) => {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, category: newCategory } : todo
+    );
+    setTodos(updatedTodos);
+  };
+
   return (
     <DefaultLayout>
       <header>
@@ -101,7 +109,11 @@ function App() {
 
         {/* dummyTodos라는 데이터를 todos라는 이름으로 전달 */}
         {/* TodoBody(dummyTodos)형태로 호출 */}
-        <TodoBody onUpdate={updateTodoHandler} todos={filteredTodos} />
+        <TodoBody
+          onUpdate={updateTodoHandler}
+          todos={filteredTodos}
+          onChange={updateCategoryHandler}
+        />
         {/* {todos}는 위에서 setTodos로 관리하는 todos (dummyTodos + 새로 입력한 todo들)이다 */}
       </section>
     </DefaultLayout>
