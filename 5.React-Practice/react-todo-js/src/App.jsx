@@ -63,6 +63,19 @@ function App() {
   //   setTodos(newTodos);
   // };
 
+  const updateTodoHandler = (updateTodo) => {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === updateTodo.id ? updateTodo : todo
+    );
+    setTodos(updatedTodos);
+  };
+
+  const [filter, setFilter] = useState("all");
+
+  const filteredTodos = todos.filter((todo) => {
+    return filter === "all" ? true : todo.category === filter;
+  });
+
   return (
     <DefaultLayout>
       <header>
@@ -84,11 +97,11 @@ function App() {
       </header>
 
       <section className="max-w-xl m-4 mx-auto">
-        <TodoHeader onAdd={addTodoHandler} />
+        <TodoHeader onAdd={addTodoHandler} onFilterChange={setFilter} />
 
         {/* dummyTodos라는 데이터를 todos라는 이름으로 전달 */}
         {/* TodoBody(dummyTodos)형태로 호출 */}
-        <TodoBody todos={todos} />
+        <TodoBody onUpdate={updateTodoHandler} todos={filteredTodos} />
         {/* {todos}는 위에서 setTodos로 관리하는 todos (dummyTodos + 새로 입력한 todo들)이다 */}
       </section>
     </DefaultLayout>

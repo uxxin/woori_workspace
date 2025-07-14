@@ -1,37 +1,48 @@
 import { TODO_CATEGORY_ICON } from "@/constants/icon";
 import { useState } from "react";
 
-const TodoForm = ({ onAdd, onClose }) => {
-  // 각각의 입력폼을 개별 상태로 관리
-  const [title, setTitle] = useState("");
-  const [summary, setSummary] = useState("");
-  const [category, setCategory] = useState("TODO"); // 카테고리의 기본값은 TODO
-  //할일 등록 버튼을 눌렀을 때 동작시킬 핸들러
-  const addTodoHandler = () => {
-    const todo = {
-      title: title, // 프로퍼티와 변수의 이름이 같을 경우 title로만 작성해도 됨.
-      summary: summary,
-      category: category,
-    };
-    // App.jsx로 전달
-    onAdd(todo); // App.jsx에서 전달받은 함수(addTodoHandler)를 호출
-    // 모달창 닫기
+const TodoForm = ({ actionTitle, buttonText, onAction, onClose, todo }) => {
+  // todo가 존재하면 수정, 없으면 등록
+  const isEditMode = !!todo?.id;
+
+  // 상태 초기화: todo가 없을 경우 빈 값으로 처리
+  const [title, setTitle] = useState(todo?.title ?? "");
+  const [summary, setSummary] = useState(todo?.summary ?? "");
+  const [category, setCategory] = useState(todo?.category ?? "TODO");
+
+  const todoActionHandler = () => {
+    if (isEditMode) {
+      // 수정 모드
+      const updatedTodo = {
+        id: todo.id,
+        title,
+        summary,
+        category,
+      };
+      onAction(updatedTodo);
+    } else {
+      // 등록 모드
+      const newTodo = {
+        title,
+        summary,
+        category,
+      };
+      onAction(newTodo);
+    }
+
     onClose();
   };
 
-  console.log(title);
-  console.log(summary);
-  console.log(category);
-
   return (
     <>
-      <h3 className="text-3xl text-red-200">할일 등록</h3>
+      <h3 className="text-3xl text-red-200">할일 {actionTitle}</h3>
       <form className="my-2">
         <div>
           <label className="block mb-2 text-xl text-white" htmlFor="title">
             Title
           </label>
           <input
+            value={title}
             onChange={(event) => setTitle(event.target.value)}
             className="w-full p-2 border-[1px] border-gray-300 bg-gray-200 text-gray-900 rounded"
             type="text"
@@ -43,6 +54,7 @@ const TodoForm = ({ onAdd, onClose }) => {
             Summary
           </label>
           <textarea
+            value={summary}
             onChange={(event) => setSummary(event.target.value)}
             className="w-full p-2 border-[1px] border-gray-300 bg-gray-200 text-gray-900 rounded"
             id="summary"
@@ -54,6 +66,7 @@ const TodoForm = ({ onAdd, onClose }) => {
             Category
           </label>
           <select
+            value={category}
             onChange={(event) => setCategory(event.target.value)}
             className="w-full p-2 border-[1px] border-gray-300 bg-gray-200 text-gray-900 rounded"
             id="category"
@@ -66,7 +79,7 @@ const TodoForm = ({ onAdd, onClose }) => {
           </select>
         </div>
 
-        <div className="flex justify-end gap-4">
+        <div className="flex justify-end gap-4 mt-4">
           <button
             onClick={onClose}
             className="text-xl text-white"
@@ -75,17 +88,18 @@ const TodoForm = ({ onAdd, onClose }) => {
             Cancel
           </button>
           <button
-            onClick={addTodoHandler}
+            onClick={todoActionHandler}
             className="px-6 py-3 text-xl text-red-200"
             type="button"
           >
-            Add
+            {buttonText}
           </button>
         </div>
       </form>
     </>
   );
 };
+
 export default TodoForm;
 
 // - 할일 등록 처리
