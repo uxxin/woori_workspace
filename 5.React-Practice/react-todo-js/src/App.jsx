@@ -5,6 +5,7 @@ import TodoHeader from "./components/todos/TodoHeader";
 import DefaultLayout from "./layouts/DefaultLayout";
 import Modal from "./components/ui/Modal";
 import { useState } from "react";
+import MyContext from "./context/TodoContext";
 
 //서버에서 받아온 데이터라고 가정
 const dummyTodos = [
@@ -81,11 +82,15 @@ function App() {
     setTodos(updatedTodos);
   };
 
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState("ALL");
 
   const filteredTodos = todos.filter((todo) => {
-    return filter === "all" ? true : todo.category === filter;
+    return filter === "ALL" ? true : todo.category === filter;
   });
+
+  //강사님 방식
+  // const filterTodos = () => selectedCategory ==="all"?todos: todos.filter(todo=> todo.category === selectedCategory)
+  // const filteredTodos = filteredTodos();
 
   // 새로운 카테고리값 newCategory 값과 id 를 통해 해당 항목의 category 변경
   const updateCategoryHandler = (id, newCategory) => {
@@ -115,19 +120,23 @@ function App() {
         </h1>
       </header>
 
-      <section className="max-w-xl m-4 mx-auto">
-        <TodoHeader onAdd={addTodoHandler} onFilterChange={setFilter} />
-
-        {/* dummyTodos라는 데이터를 todos라는 이름으로 전달 */}
-        {/* TodoBody(dummyTodos)형태로 호출 */}
-        <TodoBody
-          onUpdate={updateTodoHandler}
-          todos={filteredTodos}
-          onChange={updateCategoryHandler}
-          onDelete={deleteTodoHandler}
-        />
-        {/* {todos}는 위에서 setTodos로 관리하는 todos (dummyTodos + 새로 입력한 todo들)이다 */}
-      </section>
+      <MyContext.Provider
+        value={{
+          addTodo: addTodoHandler,
+          updateTodo: updateTodoHandler,
+          updateCategory: updateCategoryHandler,
+          deleteTodo: deleteTodoHandler,
+          setFilter,
+        }}
+      >
+        <section className="max-w-xl m-4 mx-auto">
+          <TodoHeader />
+          {/* dummyTodos라는 데이터를 todos라는 이름으로 전달 */}
+          {/* TodoBody(dummyTodos)형태로 호출 */}
+          <TodoBody todos={filteredTodos} />
+          {/* {todos}는 위에서 setTodos로 관리하는 todos (dummyTodos + 새로 입력한 todo들)이다 */}
+        </section>
+      </MyContext.Provider>
     </DefaultLayout>
   );
 }

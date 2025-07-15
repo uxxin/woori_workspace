@@ -4,7 +4,7 @@ import Modal from "../ui/Modal";
 import { createPortal } from "react-dom";
 import TodoForm from "./TodoForm";
 
-const TodoHeader = ({ onAdd, onFilterChange }) => {
+const TodoHeader = () => {
   // Modal의 열기/ 닫기 여부를 관리하는 상태값
   const [openModal, open] = useState(false);
   const openModalHandler = () => open(true);
@@ -27,7 +27,6 @@ const TodoHeader = ({ onAdd, onFilterChange }) => {
             <TodoForm
               actionTitle={"등록"}
               buttonText={"Add"}
-              onAction={onAdd}
               onClose={() => open(false)}
             />
           </Modal>,
@@ -35,7 +34,7 @@ const TodoHeader = ({ onAdd, onFilterChange }) => {
         )}
       {/* Modal 컴포넌트에게 onClick이라는 이름의 props로 open 함수를 전달 */}
       {/* <Modal>여기에 넣고 싶은 컴포넌트를 넣어서 모달을 띄움</Modal> */}
-      <TodoFilter onChange={onFilterChange} />
+      <TodoFilter />
     </div>
   );
 };

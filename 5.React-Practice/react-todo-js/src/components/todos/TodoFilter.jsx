@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { TODO_CATEGORY_ICON } from "@/constants/icon";
 //@ : 어떤 경로에서든 편하게 불러오게 vite.config.js에서 정의해줘야함.
-const TodoFilter = ({ onChange }) => {
+import MyContext from "../../context/TodoContext";
+
+const TodoFilter = () => {
+  const { setFilter } = useContext(MyContext);
   return (
     <select
       className="p-2 text-gray-100 bg-gray-800 rounded"
       data-cy="todo-filter"
-      onChange={(e) => onChange(e.target.value)}
+      onChange={(e) => setFilter(e.target.value)}
     >
       {/* defaultValue? - https://react.dev/reference/react-dom/components/select */}
       <option value="all" defaultValue={"1"}>

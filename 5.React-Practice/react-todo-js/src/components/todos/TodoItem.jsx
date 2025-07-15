@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { TODO_CATEGORY_ICON } from "@/constants/icon";
 import IconButton from "../ui/IconButton";
 import { createPortal } from "react-dom";
 import Modal from "../ui/Modal";
 import TodoForm from "./TodoForm";
 import { useState } from "react";
+import MyContext from "../../context/TodoContext";
 
 // TodoBody에서 todo라는 이름의 props를 전달(내려줬음)
-const TodoItem = ({ todo, onUpdate, onChange, onDelete }) => {
+const TodoItem = ({ todo, onChange }) => {
   const [openModal, open] = useState(false);
   const openModalHandler = () => open(true);
   //console.log("TodoItem,", todo);
+  const { deleteTodo, updateCategory } = useContext(MyContext);
 
   return (
     <li className="flex gap-4 justify-between my-4 py-4 px-4 border-[1px] bg-gray-700 rounded-md shadow-xl">
@@ -23,7 +25,7 @@ const TodoItem = ({ todo, onUpdate, onChange, onDelete }) => {
         <select
           value={todo.category}
           className="p-2 text-gray-100 bg-gray-800 rounded"
-          onChange={(e) => onChange(todo.id, e.target.value)}
+          onChange={(e) => updateCategory(todo.id, e.target.value)}
         >
           <option value="TODO">{TODO_CATEGORY_ICON.TODO} To do</option>
           <option value="PROGRESS">
@@ -45,7 +47,7 @@ const TodoItem = ({ todo, onUpdate, onChange, onDelete }) => {
       <div className="flex items-center gap-1">
         {/* IconButton은 우리가 만든 component임. 실제 우리가 만든 onClick임/ */}
         <IconButton onClick={openModalHandler} icon={"✏️"} />
-        <IconButton onClick={() => onDelete(todo.id)} icon={"🗑"} />
+        <IconButton onClick={() => deleteTodo(todo.id)} icon={"🗑"} />
         {/* Modal이 생성되는 위치 */}
         {openModal &&
           createPortal(
@@ -53,7 +55,6 @@ const TodoItem = ({ todo, onUpdate, onChange, onDelete }) => {
               <TodoForm
                 actionTitle={"수정"}
                 buttonText={"Update"}
-                onAction={onUpdate}
                 onClose={() => open(false)}
                 todo={todo}
               />

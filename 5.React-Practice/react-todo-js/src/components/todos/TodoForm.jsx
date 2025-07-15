@@ -1,7 +1,8 @@
 import { TODO_CATEGORY_ICON } from "@/constants/icon";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import MyContext from "../../context/TodoContext";
 
-const TodoForm = ({ actionTitle, buttonText, onAction, onClose, todo }) => {
+const TodoForm = ({ actionTitle, buttonText, onClose, todo }) => {
   // todo가 존재하면 수정, 없으면 등록
   const isEditMode = !!todo?.id;
 
@@ -9,6 +10,7 @@ const TodoForm = ({ actionTitle, buttonText, onAction, onClose, todo }) => {
   const [title, setTitle] = useState(todo?.title ?? "");
   const [summary, setSummary] = useState(todo?.summary ?? "");
   const [category, setCategory] = useState(todo?.category ?? "TODO");
+  const { addTodo, updateTodo } = useContext(MyContext);
 
   const todoActionHandler = () => {
     if (isEditMode) {
@@ -19,7 +21,7 @@ const TodoForm = ({ actionTitle, buttonText, onAction, onClose, todo }) => {
         summary,
         category,
       };
-      onAction(updatedTodo);
+      updateTodo(updatedTodo);
     } else {
       // 등록 모드
       const newTodo = {
@@ -27,7 +29,7 @@ const TodoForm = ({ actionTitle, buttonText, onAction, onClose, todo }) => {
         summary,
         category,
       };
-      onAction(newTodo);
+      addTodo(newTodo);
     }
 
     onClose();
