@@ -1,44 +1,26 @@
-<<<<<<< HEAD
-/* General, reset.css */
-=======
 /* General, reset.css 전부 사용할 때 */
->>>>>>> 0b13971c6e0e0855585277edc4cd8c59ff7d2166
 * {
-    font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
 }
 
-<<<<<<< HEAD
-=======
 /* h2 태그에만 사용 */
->>>>>>> 0b13971c6e0e0855585277edc4cd8c59ff7d2166
 h2 {
-    /* 폰트 색상(color)을 slateblue로 변경 */
+  /* 폰트 색상(color)을 slateblue로 변경 */
 }
 
-<<<<<<< HEAD
-.class-selector {
-    /* 폰트(font)의 사이즈(size)를 30픽셀(px)로 변경 */
-    border: 2px dashed firebrick;
-}
-
-#id-selector {
-    /* 폰트(font)의 사이즈(size)를 30픽셀(px)로 변경 */
-    /* 폰트(font)의 서체 스타일(style)을 기울임(italic)꼴로 변경 */
-=======
 /* 해당 class에만 적용 */
 .class-selector {
-    /* 폰트(font)의 사이즈(size)를 30픽셀(px)로 변경 */
-    border: 2px dashed firebrick;
-    font-size: 30px;
+  /* 폰트(font)의 사이즈(size)를 30픽셀(px)로 변경 */
+  border: 2px dashed firebrick;
+  font-size: 30px;
 }
 
 #id-selector {
-    border: 2px dashed blue;
-    font-size: 30px;
-    /* 폰트(font)의 사이즈(size)를 30픽셀(px)로 변경 */
-    font-style: italic;
-    /* 폰트(font)의 서체 스타일(style)을 기울임(italic)꼴로 변경 */
-    color: forestgreen;
->>>>>>> 0b13971c6e0e0855585277edc4cd8c59ff7d2166
-    /* 폰트 색상(color)을 forestgreen로 변경 */
+  border: 2px dashed blue;
+  font-size: 30px;
+  /* 폰트(font)의 사이즈(size)를 30픽셀(px)로 변경 */
+  font-style: italic;
+  /* 폰트(font)의 서체 스타일(style)을 기울임(italic)꼴로 변경 */
+  color: forestgreen;
+  /* 폰트 색상(color)을 forestgreen로 변경 */
 }
