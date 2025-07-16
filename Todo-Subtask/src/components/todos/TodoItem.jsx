@@ -8,27 +8,19 @@ import { useState } from "react";
 import MyContext from "../../context/TodoContext";
 
 // TodoBody에서 todo라는 이름의 props를 전달(내려줬음)
-const TodoItem = ({ todo, onChange }) => {
+const TodoItem = ({ todo }) => {
   const [openModal, open] = useState(false);
   const openModalHandler = () => open(true);
   //console.log("TodoItem,", todo);
-  const { deleteTodo, updateCategory } = useContext(MyContext);
+  const { deleteTodo, updateSubtask } = useContext(MyContext);
 
   return (
     <li className="flex gap-4 justify-between my-4 py-4 px-4 border-[1px] bg-gray-700 rounded-md shadow-xl">
-      {/* TODO: 여기 category select로 말고 고정으로 뜨게  */}
       <div>
-        <select
-          value={todo.category}
-          className="p-2 text-gray-100 bg-gray-800 rounded"
-          onChange={(e) => updateCategory(todo.id, e.target.value)}
-        >
-          <option value="TODO">{TODO_CATEGORY_ICON.TODO} To do</option>
-          <option value="PROGRESS">
-            {TODO_CATEGORY_ICON.PROGRESS} On progress
-          </option>
-          <option value="DONE">{TODO_CATEGORY_ICON.DONE} Done</option>
-        </select>
+        <span className="p-2 text-gray-100 bg-gray-800 rounded">
+          {TODO_CATEGORY_ICON[todo.category]}
+          {todo.category}
+        </span>
 
         <div>
           <h2
@@ -37,10 +29,31 @@ const TodoItem = ({ todo, onChange }) => {
           >
             {todo.title}
           </h2>
-          <p className="mt-2 text-base text-gray-200">{todo.summary}</p>
-          <ul>
+          {/* <p className="mt-2 text-base text-gray-200">{todo.summary}</p> */}
+
+          <ul className="pl-4 mt-2 space-y-1">
             {todo.subtasks.map((subtask) => (
-              <li key={subtask.id}>{subtask.title}</li>
+              <li
+                key={subtask.id}
+                className="flex items-center gap-2 text-white"
+              >
+                <input
+                  type="checkbox"
+                  checked={subtask.done}
+                  onChange={(e) =>
+                    updateSubtask(todo.id, subtask.id, e.target.checked)
+                  }
+                />
+                <span
+                  className={`text-sm ${
+                    subtask.done
+                      ? "line-through text-gray-400"
+                      : "text-gray-100"
+                  }`}
+                >
+                  {subtask.title}
+                </span>
+              </li>
             ))}
           </ul>
         </div>

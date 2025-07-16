@@ -11,6 +11,24 @@ const TodoForm = ({ actionTitle, buttonText, onClose, todo }) => {
   const [summary, setSummary] = useState(todo?.summary ?? "");
   const [category, setCategory] = useState(todo?.category ?? "TODO");
   const { addTodo, updateTodo } = useContext(MyContext);
+  const [newSubtask, setNewSubtask] = useState("");
+  const [subtasks, setSubtasks] = useState(todo?.subtasks ?? []);
+
+  const addSubTask = () => {
+    if (newSubtask.trim() !== "") {
+      const newItem = {
+        id: self.crypto.randomUUID,
+        title: newSubtask,
+        done: false,
+      };
+      setSubtasks([...subtasks, newItem]);
+      setNewSubtask("");
+    }
+  };
+
+  const removeSubTask = (id) => {
+    setSubtasks(subtasks.filter((task) => task.id !== id));
+  };
 
   const todoActionHandler = () => {
     if (isEditMode) {
@@ -51,36 +69,48 @@ const TodoForm = ({ actionTitle, buttonText, onClose, todo }) => {
             id="title"
           />
         </div>
-        <div>
-          <label className="block mb-2 text-xl text-white" htmlFor="summary">
-            Summary
+        <div className="mt-4">
+          {/* 여기에 subtasks입력 받는 칸  */}
+          {/* Add 클릭하면 밑에 뜨고 추가 되는 로직 */}
+          {/* 삭제 로직 구현 */}
+          {/* TODO: Item에 추가, 삭제 로직 */}
+          <label className="block mb-2 text-xl text-white" htmlFor="subtasks">
+            Subtasks
           </label>
-          <textarea
-            value={summary}
-            onChange={(event) => setSummary(event.target.value)}
-            className="w-full p-2 border-[1px] border-gray-300 bg-gray-200 text-gray-900 rounded"
-            id="summary"
-            rows="5"
-          />
+          <div className="flex gap-2 mb-2">
+            <input
+              value={newSubtask}
+              type="text"
+              onChange={(e) => setNewSubtask(e.target.value)}
+              className="w-full p-2 border border-gray-300 bg-gray-200 text-gray-900 rounded"
+              placeholder="enter subtask"
+            />
+            <button
+              type="button"
+              onClick={addSubTask}
+              className=" p-2 bg-white rounded"
+            >
+              Add
+            </button>
+          </div>
+          <ul className="pl-5 list-disc space-y-1">
+            {subtasks.map((subtask) => (
+              // 여기에 이제 list 형태로 출력할 내용과 삭제 버튼 넣기
+              <li key={subtask.id} className="text-sm text-gray-100 list-item">
+                <div className="flex justify-between items-center">
+                  <span className="text-white">{subtask.title}</span>
+                  <button
+                    type="button"
+                    className="ml-2 px-2 py-1 text-sm font-medium text-red-600 bg-white  rounded hover:bg-red-100"
+                    onClick={() => removeSubTask(subtask.id)}
+                  >
+                    삭제
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div>
-          <label className="block mb-2 text-xl text-white" htmlFor="category">
-            Category
-          </label>
-          <select
-            value={category}
-            onChange={(event) => setCategory(event.target.value)}
-            className="w-full p-2 border-[1px] border-gray-300 bg-gray-200 text-gray-900 rounded"
-            id="category"
-          >
-            <option value="TODO">{TODO_CATEGORY_ICON.TODO} To do</option>
-            <option value="PROGRESS">
-              {TODO_CATEGORY_ICON.PROGRESS} On progress
-            </option>
-            <option value="DONE">{TODO_CATEGORY_ICON.DONE} Done</option>
-          </select>
-        </div>
-
         <div className="flex justify-end gap-4 mt-4">
           <button
             onClick={onClose}
