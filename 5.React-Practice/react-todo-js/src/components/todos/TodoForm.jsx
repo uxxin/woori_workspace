@@ -6,8 +6,8 @@ const TodoForm = ({ actionTitle, buttonText, onClose, todo }) => {
   const isEditMode = !!todo?.id;
 
   const [title, setTitle] = useState(todo?.title ?? "");
-  const [summary, setSummary] = useState(todo?.summary ?? "");
-  const [category, setCategory] = useState(todo?.category ?? "TODO");
+  // const [summary, setSummary] = useState(todo?.summary ?? "");
+  //const [category, setCategory] = useState(todo?.category ?? "TODO");
 
   const [subtasks, setSubtasks] = useState(todo?.subtasks ?? []);
   const [newSubtask, setNewSubtask] = useState("");
@@ -17,7 +17,7 @@ const TodoForm = ({ actionTitle, buttonText, onClose, todo }) => {
   const addSubtask = () => {
     if (newSubtask.trim() !== "") {
       const newItem = {
-        id: Date.now(),
+        id: self.crypto.randomUUID(),
         title: newSubtask,
         done: false,
       };
@@ -33,8 +33,7 @@ const TodoForm = ({ actionTitle, buttonText, onClose, todo }) => {
   const todoActionHandler = () => {
     const baseTodo = {
       title,
-      summary,
-      category,
+      category: "TODO",
       subtasks,
     };
 
@@ -104,7 +103,7 @@ const TodoForm = ({ actionTitle, buttonText, onClose, todo }) => {
         </div>
 
         {/* 카테고리 자동화 할건지에 따라 비활성화 시키기 */}
-        <div className="mt-4">
+        {/* <div className="mt-4">
           <label className="block mb-2 text-xl text-white" htmlFor="category">
             Category
           </label>
@@ -121,7 +120,7 @@ const TodoForm = ({ actionTitle, buttonText, onClose, todo }) => {
             </option>
             <option value="DONE">{TODO_CATEGORY_ICON.DONE} Done</option>
           </select>
-        </div>
+        </div> */}
 
         <div className="flex justify-end gap-4 mt-6">
           <button
