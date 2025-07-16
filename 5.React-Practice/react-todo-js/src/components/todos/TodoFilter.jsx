@@ -12,7 +12,7 @@ const TodoFilter = () => {
       onChange={(e) => setFilter(e.target.value)}
     >
       {/* defaultValue? - https://react.dev/reference/react-dom/components/select */}
-      <option value="all" defaultValue={"1"}>
+      <option value="ALL" defaultValue={"1"}>
         All
       </option>
       <option value="TODO">{TODO_CATEGORY_ICON.TODO} To do</option>

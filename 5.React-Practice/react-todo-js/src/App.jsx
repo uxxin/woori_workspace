@@ -12,20 +12,30 @@ const dummyTodos = [
   {
     id: 1,
     title: "React 공부",
-    summary: "React를 공부한다.",
     category: "TODO",
+    subtasks: [
+      { id: 101, title: "props 학습", done: false },
+      { id: 102, title: "reducer 학습", done: false },
+    ],
   },
   {
     id: 2,
     title: "점심 먹기",
-    summary: "점심을 먹는다.",
     category: "PROGRESS",
+    subtasks: [
+      { id: 201, title: "밥먹기", done: true },
+      { id: 202, title: "비타민 먹기 학습", done: false },
+    ],
   },
   {
     id: 3,
     title: "커피 마시기",
     summary: "커피를 마신다.",
     category: "DONE",
+    subtasks: [
+      { id: 301, title: "props 학습", done: true },
+      { id: 302, title: "reducer 학습", done: true },
+    ],
   },
 ];
 
@@ -100,6 +110,30 @@ function App() {
     setTodos(updatedTodos);
   };
 
+  const updateSubtaskHandler = (todoId, subtaskId, done) => {
+    const updatedTodos = todos.map((todo) => {
+      if (todo.id === todoId) {
+        const updatedSubtasks = todo.subtasks.map((subtask) =>
+          subtask.id === subtaskId ? { ...subtask, done } : subtask
+        );
+
+        const doneCount = updatedSubtasks.filter((s) => s.done).length;
+        let newCategory = "TODO";
+        if (doneCount === updatedSubtasks.length) newCategory = "DONE";
+        else if (doneCount > 0) newCategory = "PROGRESS";
+
+        return {
+          ...todo,
+          subtasks: updatedSubtasks,
+          category: newCategory,
+        };
+      }
+      return todo;
+    });
+
+    setTodos(updatedTodos);
+  };
+
   return (
     <DefaultLayout>
       <header>
@@ -127,6 +161,7 @@ function App() {
           updateCategory: updateCategoryHandler,
           deleteTodo: deleteTodoHandler,
           setFilter,
+          updateSubtask: updateSubtaskHandler,
         }}
       >
         <section className="max-w-xl m-4 mx-auto">

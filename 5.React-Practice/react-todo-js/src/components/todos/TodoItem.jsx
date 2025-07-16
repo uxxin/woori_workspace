@@ -8,61 +8,68 @@ import { useState } from "react";
 import MyContext from "../../context/TodoContext";
 
 // TodoBody에서 todo라는 이름의 props를 전달(내려줬음)
-const TodoItem = ({ todo, onChange }) => {
+const TodoItem = ({ todo }) => {
   const [openModal, open] = useState(false);
   const openModalHandler = () => open(true);
-  //console.log("TodoItem,", todo);
-  const { deleteTodo, updateCategory } = useContext(MyContext);
+  const { deleteTodo, updateSubtask } = useContext(MyContext);
 
   return (
-    <li className="flex gap-4 justify-between my-4 py-4 px-4 border-[1px] bg-gray-700 rounded-md shadow-xl">
-      <div>
-        {/* <span className="text-lg font-medium text-gray-300">
-          {TODO_CATEGORY_ICON[todo.category]}
-        </span> */}
-
-        {/* 드롭다운은 TodoFilter.jsx 그대로 + onChange로 바뀐 값 넘기게  */}
-        <select
-          value={todo.category}
-          className="p-2 text-gray-100 bg-gray-800 rounded"
-          onChange={(e) => updateCategory(todo.id, e.target.value)}
-        >
-          <option value="TODO">{TODO_CATEGORY_ICON.TODO} To do</option>
-          <option value="PROGRESS">
-            {TODO_CATEGORY_ICON.PROGRESS} On progress
-          </option>
-          <option value="DONE">{TODO_CATEGORY_ICON.DONE} Done</option>
-        </select>
-
+    <li className="flex flex-col gap-2 my-4 py-4 px-4 border-[1px] bg-gray-700 rounded-md shadow-xl">
+      <div className="flex justify-between items-start">
         <div>
-          <h2
-            data-test="title"
-            className="mb-0 text-lg font-bold text-gray-100 uppercase"
-          >
+          {/* 카테고리 아이콘 + 텍스트 */}
+          <span className="text-sm text-gray-300">
+            {TODO_CATEGORY_ICON[todo.category]} {todo.category}
+          </span>
+          <h2 className="mt-1 text-lg font-bold text-gray-100 uppercase">
             {todo.title}
           </h2>
-          <p className="mt-2 text-base text-gray-200">{todo.summary}</p>
+          <p className="text-base text-gray-200">{todo.summary}</p>
+        </div>
+        <div className="flex items-center gap-1">
+          <IconButton onClick={openModalHandler} icon={"✏️"} />
+          <IconButton onClick={() => deleteTodo(todo.id)} icon={"🗑"} />
         </div>
       </div>
-      <div className="flex items-center gap-1">
-        {/* IconButton은 우리가 만든 component임. 실제 우리가 만든 onClick임/ */}
-        <IconButton onClick={openModalHandler} icon={"✏️"} />
-        <IconButton onClick={() => deleteTodo(todo.id)} icon={"🗑"} />
-        {/* Modal이 생성되는 위치 */}
-        {openModal &&
-          createPortal(
-            <Modal onClose={() => open(false)}>
-              <TodoForm
-                actionTitle={"수정"}
-                buttonText={"Update"}
-                onClose={() => open(false)}
-                todo={todo}
+
+      {/* 서브태스크 목록 */}
+      {todo.subtasks?.length > 0 && (
+        <ul className="pl-4 mt-2 space-y-1">
+          {todo.subtasks.map((subtask) => (
+            <li key={subtask.id} className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                checked={subtask.done}
+                onChange={(e) =>
+                  updateSubtask(todo.id, subtask.id, e.target.checked)
+                }
               />
-            </Modal>,
-            document.body
-          )}
-      </div>
+              <span
+                className={`text-sm ${
+                  subtask.done ? "line-through text-gray-400" : "text-gray-100"
+                }`}
+              >
+                {subtask.title}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {openModal &&
+        createPortal(
+          <Modal onClose={() => open(false)}>
+            <TodoForm
+              actionTitle={"수정"}
+              buttonText={"Update"}
+              onClose={() => open(false)}
+              todo={todo}
+            />
+          </Modal>,
+          document.body
+        )}
     </li>
   );
 };
+
 export default TodoItem;

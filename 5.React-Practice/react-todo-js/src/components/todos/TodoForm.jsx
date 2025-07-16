@@ -3,33 +3,45 @@ import { useContext, useState } from "react";
 import MyContext from "../../context/TodoContext";
 
 const TodoForm = ({ actionTitle, buttonText, onClose, todo }) => {
-  // todo가 존재하면 수정, 없으면 등록
   const isEditMode = !!todo?.id;
 
-  // 상태 초기화: todo가 없을 경우 빈 값으로 처리
   const [title, setTitle] = useState(todo?.title ?? "");
   const [summary, setSummary] = useState(todo?.summary ?? "");
   const [category, setCategory] = useState(todo?.category ?? "TODO");
+
+  const [subtasks, setSubtasks] = useState(todo?.subtasks ?? []);
+  const [newSubtask, setNewSubtask] = useState("");
+
   const { addTodo, updateTodo } = useContext(MyContext);
 
+  const addSubtask = () => {
+    if (newSubtask.trim() !== "") {
+      const newItem = {
+        id: Date.now(),
+        title: newSubtask,
+        done: false,
+      };
+      setSubtasks([...subtasks, newItem]);
+      setNewSubtask("");
+    }
+  };
+
+  const removeSubtask = (id) => {
+    setSubtasks(subtasks.filter((task) => task.id !== id));
+  };
+
   const todoActionHandler = () => {
+    const baseTodo = {
+      title,
+      summary,
+      category,
+      subtasks,
+    };
+
     if (isEditMode) {
-      // 수정 모드
-      const updatedTodo = {
-        id: todo.id,
-        title,
-        summary,
-        category,
-      };
-      updateTodo(updatedTodo);
+      updateTodo({ ...baseTodo, id: todo.id });
     } else {
-      // 등록 모드
-      const newTodo = {
-        title,
-        summary,
-        category,
-      };
-      addTodo(newTodo);
+      addTodo(baseTodo);
     }
 
     onClose();
@@ -45,33 +57,63 @@ const TodoForm = ({ actionTitle, buttonText, onClose, todo }) => {
           </label>
           <input
             value={title}
-            onChange={(event) => setTitle(event.target.value)}
-            className="w-full p-2 border-[1px] border-gray-300 bg-gray-200 text-gray-900 rounded"
+            onChange={(e) => setTitle(e.target.value)}
+            className="w-full p-2 border border-gray-300 bg-gray-200 text-gray-900 rounded"
             type="text"
             id="title"
           />
         </div>
-        <div>
-          <label className="block mb-2 text-xl text-white" htmlFor="summary">
-            Summary
+
+        {/* Subtasks 입력 영역 */}
+        <div className="mt-4">
+          <label className="block mb-2 text-xl text-white" htmlFor="subtasks">
+            Subtasks
           </label>
-          <textarea
-            value={summary}
-            onChange={(event) => setSummary(event.target.value)}
-            className="w-full p-2 border-[1px] border-gray-300 bg-gray-200 text-gray-900 rounded"
-            id="summary"
-            rows="5"
-          />
+          <div className="flex gap-2 mb-2">
+            <input
+              value={newSubtask}
+              onChange={(e) => setNewSubtask(e.target.value)}
+              className="w-full p-2 border border-gray-300 bg-gray-200 text-gray-900 rounded"
+              type="text"
+              placeholder="Enter subtask"
+            />
+            <button
+              type="button"
+              onClick={addSubtask}
+              className="px-4 text-white bg-blue-500 rounded"
+            >
+              Add
+            </button>
+          </div>
+          <ul className="pl-5 list-disc space-y-1">
+            {subtasks.map((task) => (
+              <li key={task.id} className="text-sm text-gray-100 list-item">
+                <div className="flex justify-between items-center">
+                  <span>{task.title}</span>
+                  <button
+                    type="button"
+                    className="ml-2 px-2 py-1 text-sm font-medium text-red-600 bg-white  rounded hover:bg-red-100"
+                    onClick={() => removeSubtask(task.id)}
+                  >
+                    삭제
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div>
+
+        {/* 카테고리 자동화 할건지에 따라 비활성화 시키기 */}
+        <div className="mt-4">
           <label className="block mb-2 text-xl text-white" htmlFor="category">
             Category
           </label>
           <select
             value={category}
-            onChange={(event) => setCategory(event.target.value)}
-            className="w-full p-2 border-[1px] border-gray-300 bg-gray-200 text-gray-900 rounded"
+            onChange={(e) => setCategory(e.target.value)}
+            className="w-full p-2 border border-gray-300 bg-gray-200 text-gray-900 rounded"
             id="category"
+            disabled
           >
             <option value="TODO">{TODO_CATEGORY_ICON.TODO} To do</option>
             <option value="PROGRESS">
@@ -81,7 +123,7 @@ const TodoForm = ({ actionTitle, buttonText, onClose, todo }) => {
           </select>
         </div>
 
-        <div className="flex justify-end gap-4 mt-4">
+        <div className="flex justify-end gap-4 mt-6">
           <button
             onClick={onClose}
             className="text-xl text-white"
