@@ -1,4 +1,4 @@
-import LineChart from "./line-chart";
+import LineChart from "@/components/dashboard/line-chart";
 
 export default function Page() {
   //page.js는 해당 라우트 경로에 나타낼 컴포넌트들을 불러와서 렌더링하는 곳
