@@ -18,9 +18,9 @@ export default async function StreamingPage() {
     <div>
       <h1 className="text-xl font-bold mb-4">Stremaing SSR</h1>
       {/* 렌더링을 지연시킬 부분만 Suspense로 감싸줌, <h1>Streaming SSR</h1>은 먼저 렌더링 */}
-      <Suspense fallback={<p>Loading...</p>}>
-        <DashboardWithData />
-      </Suspense>
+      {/* <Suspense fallback={<p>Loading...</p>}> */}
+      <DashboardWithData />
+      {/* </Suspense> */}
     </div>
   );
 }
