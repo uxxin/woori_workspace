@@ -1,14 +1,16 @@
 package service.cloud;
 
 // 추상클래스 AbstractParser는 Parser 인터페이스를 구현했음.
+
+/**
+ * fileExtension을 field로 두고 CSVParser 등 각각에서 받아옴. 
+ */
 public abstract class AbstractParser implements Parser {
 	protected String fileExtension;
 	
 	public AbstractParser(String fileExtension) {
 		this.fileExtension = fileExtension;
 	}
-
-
 
 	// 추상 클래스이기 때문에 구현이 강제되지 않음.
 	// void parse(String filePath) throws ParserException;
