@@ -1,6 +1,6 @@
 package javaParser;
 
-public class AbstractParser implements Parser {
+public abstract class AbstractParser implements Parser {
 	//Parser 인터페이스를 구현하되, parse는 구현하지 않고 parser에서 구현
 	//abstract 사용
 	
