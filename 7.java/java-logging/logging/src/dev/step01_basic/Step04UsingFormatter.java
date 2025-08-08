@@ -19,6 +19,5 @@ public class Step04UsingFormatter extends Formatter{
 	        return str.toString();
 	}
 	
-	-
-	
+
 }

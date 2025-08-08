@@ -2,6 +2,8 @@ package dev.step02_exlib;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.*;
+
 
 //Log4j 라이브러리 적용 테스트
 
