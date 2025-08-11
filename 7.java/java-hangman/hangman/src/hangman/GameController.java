@@ -5,46 +5,33 @@ import service.cloud.Console;
 public class GameController {
 
 	public static void main(String[] args) {
-		String hangmanIntro = """
-
-				      +----+
-				      |    |
-				   Welcome |
-				     to    |
-				  Hangman  |
-				    Game   |
-				           |
-				===============
-
-				    """;
-		// 게임 시작 콘솔
-		Console.println(hangmanIntro);
-		// 카테고리 인풋 받기
-		int categoryKey = inputCategory();
-		Console.println(categoryKey);
-
-		// HangmanGame 인스턴스 생성
-		HangmanGame game = new HangmanGame();
-		game.start(categoryKey);
+			
+		int categoryNum = inputCategory(); 					// 1. 카테고리 입력 받기
+		HangmanGame game = new HangmanGame(categoryNum);	// 2. 입력받은 카테고리를 통해 HangmanGame 인스턴스 생성하기
+		game.start();										// 3. 게임 시작하기
+		
 
 	}
+	
+	public static int inputCategory() {
+	     
+	    Console.print("게임 카테고리를 선택하세요: 1. 음식 2. 동물 3. 사물 4. 동사 (숫자로 입력하세요)");	// 콘솔로 카테고리 입력받기
+        String input = Console.read();
 
-	private static int inputCategory() {
-		String input;
+        try {	
+            int categoryNum = Integer.parseInt(input);										
 
-	    while (true) {
-	        Console.println("~~~~~~~ Select Category ~~~~~~~");
-			Console.println("1.Food 2.Animal 3.Object 4.Verbs");
-			Console.print("input Category Number (1, 2, 3, 4) : ");
-	        input = Console.read();
+            if (categoryNum >= 1 && categoryNum <= 4) {
+                return categoryNum;
+            } else {
+                Console.print("1부터 4 사이의 숫자를 입력해주세요.");
+            }
 
-	        // 유효성 검사: categoryKey가 1,2,3,4 중 하나인지 체크
-	        if (input.equals("1") || input.equals("2") || input.equals("3") || input.equals("4")) {
-	            break;  // 유효하면 반복 종료
-	        } else {
-	            System.out.println("\n⚠️ 잘못된 입력입니다. \n1, 2, 3, 4 중 하나를 입력하세요.");
-	        }
-	    }
-	    return Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            Console.print("숫자만 입력 가능합니다. 다시 시도해주세요.");
+        }
+        
+        return -1;
 	}
+
 }

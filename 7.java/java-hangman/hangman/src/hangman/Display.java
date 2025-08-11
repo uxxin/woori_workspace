@@ -1,16 +1,14 @@
 package hangman;
 
+/**
+ * Display 객체
+ * - 행맨 캐릭터 출력하는 기능
+ * - 남은 생명 출력하는 기능
+ * - 입력한 알파벳 중 정답인 알파벳을 출력하는 기능
+ */
 public class Display {
-	public void showGameScreen(int life, char[] currentWord) {
-		
-	}
 	
-	public void showMessage(String message) {
-		
-	}
-	
-	public static class HangmanDrawing {
-        private static final String[] HANGMAN_STAGES = {
+	private static final String[] HANGMAN_STAGES = {
             """
               +---+
               |   |
@@ -66,23 +64,55 @@ public class Display {
             =========
             """,
             """
-              +---+
-              |   |
-              O   |
-             /|\\  |
-             / \\  |
-                  |
-            =========
-            """
+            +---+
+            |   | 
+          \\ O / |  
+            |   |
+           / \\  |
+                |
+          =========
+          """
+
         };
-        public static String getDrawing(int mistakes) {
-            if (mistakes < 0 || mistakes >= HANGMAN_STAGES.length) {
-                return HANGMAN_STAGES[HANGMAN_STAGES.length - 1];
-            }
-            return HANGMAN_STAGES[mistakes];
-        }
-        public static int getMaxStages() {
-            return HANGMAN_STAGES.length;
-        }
-    }
+	
+	/**
+	 * showGameScreen() - 선택된 카테고리, 남은 목숨, 현재 입력한 알파벳을 통해 캐릭터 상태를 보여주는 메서드입니다.
+	 * @param life
+	 * @param currentWord
+	 * @param category
+	 */
+	public void showGameScreen(int life, char[] currentWord, String category) {
+	    int stageIndex = 6 - life; // life 6 → 0번째 그림, life 0 → 6번째 그림
+	    if (stageIndex < 0) stageIndex = 0;
+	    if (stageIndex > 6) stageIndex = 6;
+	    
+	    // 0/ 선택한 카테고리 출력
+	    System.out.println("<카테고리: "+category+">");
+
+	    // 1. 행맨 그림 출력
+	    System.out.println(HANGMAN_STAGES[stageIndex]);
+
+	    // 2. 남은 생명 수 출력
+	    System.out.println("남은 생명 ♥ : " + life);
+
+	    // 3. 현재 단어 상태 출력
+	    StringBuilder wordDisplay = new StringBuilder();
+	    for (char c : currentWord) {
+	        wordDisplay.append(c).append(' ');
+	    }
+	    System.out.println("현재 단어 : " + wordDisplay.toString().trim());
+	    System.out.println();
+	}
+
+	
+	public void showMessage(String message) {
+	    System.out.println("📢 " + message);
+	}
+	
+	public void showGameOver(String targetWord) {
+	    System.out.println(HANGMAN_STAGES[6]); 
+	    System.out.println("📢 실패 ~ 다음 기회에 ~ !");
+	    System.out.println("📢 정답은 ~ " + targetWord);
+	}
+
 }

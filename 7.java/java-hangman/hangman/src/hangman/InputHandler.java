@@ -1,33 +1,36 @@
 package hangman;
 
+import service.cloud.Console;
 import java.util.HashSet;
 import java.util.Set;
-import service.cloud.Console;
 
-public class InputHandler {
+public class InputHandler{
 
-	private Set<Character> usedLetters = new HashSet<>();
+    private Set<Character> guessedLetters = new HashSet<>();
+
 
 	public char inputLetter() {
-		// 입력 받아서 유효성 검사
-		while(true) {
-			Console.print("문자 하나를 입력하세요: ");
-			// 중복 입력 체크
-			String input = Console.read();
-			if(input.length()!=1) {
-				Console.print("⚠️ 한 글자만 입력하세요.");
-				continue;
-			}
-			
-			char letter = Character.toLowerCase(input.charAt(0));
-			
-			if(usedLetters.contains(letter)) {
-				Console.print("⚠️ 이미 입력한 글자입니다: "+ letter);
-				continue;
-			}
-			
-			usedLetters.add(letter);
-			return letter;
-		}
-	}
+        while (true) {
+            Console.print("알파벳을 한 개 입력하세요(a~z, 중복은 불가능합니다): ");
+            String input = Console.read().trim().toUpperCase();
+
+            // 1. 길이가 1인지 & 알파벳인지 확인
+            if (input.length() != 1 || !Character.isLetter(input.charAt(0))) {
+                Console.print("❗ 알파벳 한 글자만 입력해주세요.\n");
+                continue;
+            }
+
+            char letter = input.charAt(0);
+
+            // 2. 중복 확인
+            if (guessedLetters.contains(letter)) {
+                Console.print("❗ 이미 입력한 알파벳입니다. 다른 글자를 입력해주세요.\n");
+                continue;
+            }
+
+            // 3. 유효하면 저장하고 반환
+            guessedLetters.add(letter);
+            return letter;
+        }
+    }
 }

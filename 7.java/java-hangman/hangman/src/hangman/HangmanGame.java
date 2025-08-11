@@ -1,79 +1,143 @@
 package hangman;
 
-import service.cloud.Console;
+import java.util.Arrays;
+
 
 public class HangmanGame {
 	
+		
+	// Field ---------------------------
 	Status status;
 	char[] currentWord;
 	String targetWord;
-	int life = 6;
+	int life;
+	String category;
 	
-	
-	public HangmanGame() {
+	/**
+	 * HangmanGame() - 게임 시작에 필요한 변수들을 세팅하는 생성자 함수입니다.
+	 * @param categoryNum
+	 */
+	public HangmanGame(int categoryNum) {
+		
+		// targetWord 초기화하기
 		WordProvider wordprovider = new WordProvider();
+		this.category = wordprovider.getCategoryName(categoryNum);
+		this.targetWord = wordprovider.getRandomWord(categoryNum);
 		
-		
+		// status, life, currentWord 초기화하기
+		this.status = Status.IN_PROGRESS;
+		this.life = 6;
+        this.currentWord = new char[targetWord.length()];
+        Arrays.fill(this.currentWord, '_');
 	}
 	
-	public void start(int categoryKey) {
-		targetWord = WordProvider.getRandomWord(categoryKey);
-		currentWord = new char[targetWord.length()];
-		for(int i = 0 ; i< currentWord.length;i++) {
-			currentWord[i] = '_';
-		}
+	// 테스트용 생성자 (고정 단어 받도록 변경)  
+	public HangmanGame(int categoryNum, String fixedWord) {
+	    this.category = new WordProvider().getCategoryName(categoryNum);
+	    this.targetWord = fixedWord;
+	    this.status = Status.IN_PROGRESS;
+	    this.life = 6;
+	    this.currentWord = new char[targetWord.length()];
+	    Arrays.fill(this.currentWord, '_');
+	}
+
+
+	// Method ------------------------
+	
+	/**
+	 * start() - 게임 진행 메서드입니다. 
+	 * 			 해당 메서드에서는 사용자로부터 알파벳을 입력받고, 결과를 화면에 보여주는 과정을 반복합니다.
+	 */
+	public void start() {
+		
+		Display display = new Display();
+		InputHandler inputhandler = new InputHandler();
 		
 		
 		do {
-			// 게임 진행 로직
-		} while(status == status.INPROGRESS);
-	}
+			// 1. display에게 출력 요청
+			display.showGameScreen(this.life, this.currentWord, this.category);
+			
+			// 2. 사용자로부터 알파벳 입력 받기
+			char inputLetter = inputhandler.inputLetter();
+			
+			// 3. 사용자가 입력한 알파벳을 갖고 검사하기
+			// 4. 검사 결과를 바탕으로 status, life 갱신하기
+			guessLetter(inputLetter);
+						
+			
+		// 5. 갱신된 status와 life에 따라서 while 조건문 처리
+		}while(this.status.equals(status.IN_PROGRESS)); 
+		
+		if(this.status.equals(status.FAIL)) { // status.FAIL인 경우
+			// 실패 출력문
+			display.showGameOver(this.targetWord);
+			
+		}else { // status.SUCCESS인 경우
+			// 성공 출력문
+			display.showMessage("성공 ~ 오 잘하네 ~ !");
+		}
 
-	void guessLetter(char inputLetter) {
-		boolean correct = false;
+	}
+	
+	/**
+	 * guessLetter() - 사용자로부터 입력받은 알파벳을 받아서, 정답에 포함되는지 확인하는 메서드
+	 * @param inputLetter
+	 */
+	public void guessLetter(char inputLetter) {
+		boolean found = false;
 		
-		for(int i = 0 ; i< targetWord.length(); i++) {
-			if(targetWord.charAt(i) == inputLetter && currentWord[i] =='_') {
+		// 포함되는 알파벳 모두 찾기
+		for (int i = 0; i < targetWord.length(); i++) {
+			if (targetWord.charAt(i) == inputLetter) {
 				currentWord[i] = inputLetter;
-				correct = true;
+				found = true;
 			}
 		}
 		
-		if(!correct) {
-			life --;
+		if (found) {
+			//logger.info("✅ 입력한 알파벳 '{}'은(는) 단어에 포함되어 있습니다.", inputLetter);
+		} else {
+			//logger.info("❌ 입력한 알파벳 '{}'은(는) 단어에 포함되어 있지 않습니다.", inputLetter);
+			this.life -= 1;
 		}
 		
-		if(isWordCompleted()) {
-			Console.print(targetWord);
-			Console.print("성공 ! 🎉🎉🎉");
-		}
-		
-	}
-	
-	private boolean isWordCompleted() {
-		for(char c: currentWord) {
-			if(c=='_') {
-				return false;
+		// status 갱신하기
+		if(this.life <= 0) { 
+			this.status = status.FAIL;
+		}else{
+			if(String.valueOf(this.currentWord).equals(targetWord)) {
+				this.status = status.SUCCESS;
+			}else {
+				this.status = status.IN_PROGRESS;
 			}
 		}
-		status = status.SUCCESS;
-		return true;
 	}
 	
-	public Character[] getCurrentWord() {
-		return null;
-	}
-	
-	public int getLife() {
-		return life;
-	}
-	
+	/**
+	 * getTargetWord() - 정답 반환하기
+	 * @return
+	 */
 	public String getTargetWord() {
-		return targetWord;
+		return this.targetWord;
 	}
 	
+	
+	/**
+	 * getStatus() - status 반환하기
+	 * @return
+	 */
 	public Status getStatus() {
-		return status;
+		return this.status;
 	}
+	
+	/**
+	 * getCurrentWord() - currentWord 반환하기
+	 * @return
+	 */
+	public char[] getCurrentWord() {
+		return this.currentWord;
+	}
+	
 
 }

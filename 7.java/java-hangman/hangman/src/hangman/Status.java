@@ -1,5 +1,7 @@
 package hangman;
 
 public enum Status {
-	INPROGRESS, FAIL, SUCCESS
+    FAIL,
+    SUCCESS,
+    IN_PROGRESS
 }
