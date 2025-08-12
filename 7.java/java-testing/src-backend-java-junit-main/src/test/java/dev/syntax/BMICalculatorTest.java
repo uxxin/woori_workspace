@@ -29,6 +29,17 @@ class BMICalculatorTest {
 	}
 
 	@Test
+	@DisplayName("내가 해보는 다이어트 추천")
+	void testMy1() {
+		double weight = 100.0;
+		double height = 1.66;
+		
+		boolean result = BMICalculator.isDietRecommended(weight, height);
+		assertTrue(result);
+		
+	}
+	
+	@Test
 	@DisplayName("전달된 파라미터 중 키가 0일 경우, ArithmeticException을 던진다.")
 	void should_ThrowArithmeticException_When_HeightZero() {
 		// Given
@@ -42,6 +53,17 @@ class BMICalculatorTest {
 		assertThrows(ArithmeticException.class, executable);
 
 	}
+	
+	@Test
+	@DisplayName("내가해보는 ArthimeticException 던지기")
+	void My_ThrowArithmeticException_When_HeightZero() {
+		double weight = 50.0;
+		double height = 0.0;
+		
+		Executable executable = () -> BMICalculator.isDietRecommended(weight, 0);
+		assertThrows(ArithmeticException.class, executable);
+	}
+	// calculateBMI()는 private이라 접근 불가
 
 	// findCoderWithWorstBMI() 메서드 테스트
 	@Test
