@@ -1,15 +1,11 @@
 package dev.syntax;
 
-import static org.junit.Assert.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.Collections;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -19,35 +15,34 @@ import org.junit.jupiter.api.function.Executable;
 import dev.syntax.data.BookingDAO;
 import dev.syntax.data.BookingRequest;
 import dev.syntax.exception.BusinessException;
-import dev.syntax.model.Room;
 import dev.syntax.service.BookingService;
 import dev.syntax.service.MailSender;
 import dev.syntax.service.PaymentService;
 import dev.syntax.service.RoomService;
 
 class Test05 {
-  
-  private BookingService bookingService;
-  private PaymentService paymentServiceMock;
-  private RoomService roomServiceMock;
-  private BookingDAO bookingDAOMock;
-  private MailSender mailSenderMock;
+	
+	private BookingService bookingService;
+	private PaymentService paymentServiceMock;
+	private RoomService roomServiceMock;
+	private BookingDAO bookingDAOMock;
+	private MailSender mailSenderMock;
 
-  
-  @BeforeEach
-  void setup() {
-    this.paymentServiceMock = mock(PaymentService.class);
-    this.roomServiceMock = mock(RoomService.class);
-    this.bookingDAOMock = mock(BookingDAO.class);
-    this.mailSenderMock = mock(MailSender.class);
-        
-    this.bookingService 
-      = new BookingService(paymentServiceMock, roomServiceMock, bookingDAOMock, mailSenderMock);
-    
-  }
-  
-  
-  	@Test
+	
+	@BeforeEach
+	void setup() {
+		this.paymentServiceMock = mock(PaymentService.class);
+		this.roomServiceMock = mock(RoomService.class);
+		this.bookingDAOMock = mock(BookingDAO.class);
+		this.mailSenderMock = mock(MailSender.class);
+				
+		this.bookingService 
+			= new BookingService(paymentServiceMock, roomServiceMock, bookingDAOMock, mailSenderMock);
+		
+	}
+	
+	
+	@Test
 	@DisplayName("makeBooking()을 통해 findAvailableRoomId()에서 방이 없을 경우 BusinessException을 던진다.")
 	void should_ThrowException_When_NoRoomAvailable() {
 		// bookingService.makeBooking() 테스트
@@ -70,12 +65,10 @@ class Test05 {
 		Executable executable = () -> bookingService.makeBooking(bookingRequest);
 		
 		// Then
-		assertThrows(IllegalArgumentException.class, executable);
+		assertThrows(BusinessException.class, executable);
 	}
-  
+	
 }
-
-
 
 
 
