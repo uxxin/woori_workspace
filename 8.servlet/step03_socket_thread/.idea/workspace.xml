@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06c8d7a1-9b4f-46bd-8750-916e926c01b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step01_single_client/SimpleClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_multiple_client/SimpleClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_multiple_client/SimpleServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dev/syntax/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step03_thread_pool/SimpleClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step03_thread_pool/ThreadPoolServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/next-rendering/app/dashboard/2.ssr/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/next-rendering/app/dashboard/2.ssr/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/.env.example" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/dashboard/invoices/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/dashboard/invoices/page.tsx" afterDir="false" />
@@ -35,6 +26,9 @@
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/search.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/next.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_multiple_client/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_multiple_client/ClientHandler_my.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_multiple_client/SimpleServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_multiple_client/SimpleServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../react-todo-js-main/cypress/e2e/todos.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-todo-js-main/cypress/e2e/todos.cy.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../react-todo-js-main/src/components/ui/IconButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-todo-js-main/src/components/ui/IconButton.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../react-todo-js-main/src/components/ui/NewModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-todo-js-main/src/components/ui/NewModal.jsx" afterDir="false" />
@@ -71,6 +65,9 @@
     "Application.App.executor": "Run",
     "Application.SimpleClient.executor": "Run",
     "Application.SimpleServer.executor": "Run",
+    "Application.ThreadPoolServer.executor": "Debug",
+    "Application.dev.syntax.step02_multiple_client.SimpleClient.executor": "Run",
+    "Application.dev.syntax.step03_thread_pool.SimpleClient.executor": "Debug",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -81,14 +78,14 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.SimpleClient">
+  <component name="RunManager" selected="Application.dev.syntax.step03_thread_pool.SimpleClient">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dev.syntax.App" />
       <module name="step03_socket_thread" />
@@ -115,12 +112,57 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ThreadPoolServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dev.syntax.step03_thread_pool.ThreadPoolServer" />
+      <module name="step03_socket_thread" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.syntax.step03_thread_pool.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dev.syntax.step02_multiple_client.SimpleClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dev.syntax.step02_multiple_client.SimpleClient" />
+      <module name="step03_socket_thread" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.syntax.step02_multiple_client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dev.syntax.step03_thread_pool.SimpleClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dev.syntax.step03_thread_pool.SimpleClient" />
+      <module name="step03_socket_thread" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.syntax.step03_thread_pool.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.ThreadPoolServer" />
+      <item itemvalue="Application.dev.syntax.step02_multiple_client.SimpleClient" />
+      <item itemvalue="Application.dev.syntax.step03_thread_pool.SimpleClient" />
       <item itemvalue="Application.App" />
       <item itemvalue="Application.SimpleClient" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.dev.syntax.step03_thread_pool.SimpleClient" />
+        <item itemvalue="Application.ThreadPoolServer" />
+        <item itemvalue="Application.dev.syntax.step02_multiple_client.SimpleClient" />
         <item itemvalue="Application.SimpleClient" />
         <item itemvalue="Application.App" />
       </list>
@@ -142,11 +184,27 @@
       <option name="presentableId" value="Default" />
       <updated>1756093250368</updated>
       <workItem from="1756093252260" duration="72000" />
-      <workItem from="1756093332246" duration="3541000" />
+      <workItem from="1756093332246" duration="12125000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dev/syntax/step03_thread_pool/ThreadPoolServer.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../00.sw/jdk-17.0.16+8/lib/src.zip!/java.base/java/util/concurrent/ThreadPoolExecutor.java</url>
+          <line>944</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

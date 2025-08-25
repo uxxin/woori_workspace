@@ -5,12 +5,12 @@ import java.io.OutputStream;
 import java.net.Socket;
 
 // Runnable 인터페이스를 구현하여 스레드에서 실행될 수 있도록 함
-public class ClientHandler implements Runnable {
+public class ClientHandler_my implements Runnable {
 
     private final Socket clientSocket; // 각 스레드가 담당할 클라이언트 소켓
 
     // 생성자를 통해 클라이언트 소켓을 전달받음
-    public ClientHandler(Socket socket) {
+    public ClientHandler_my(Socket socket) {
         this.clientSocket = socket;
     }
 
