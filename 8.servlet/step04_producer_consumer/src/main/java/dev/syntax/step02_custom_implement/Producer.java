@@ -23,7 +23,6 @@ public class Producer implements Runnable {
         for (int i = 0; i < dataQueue.getCapacity(); i++) {
 
             Message message = produceMessage();
-
             dataQueue.add(message);
 
             // 현실성을 위해 랜덤 시간 동안 슬립

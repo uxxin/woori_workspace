@@ -5,21 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ec2447c-d572-4e71-bd3e-311f1e353a81" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step01_producer_consumer/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step01_producer_consumer/DataQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step01_producer_consumer/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step01_producer_consumer/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step01_producer_consumer/Producer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step01_producer_consumer/ThreadUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_custom_implement/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_custom_implement/DataQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_custom_implement/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_custom_implement/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_custom_implement/Producer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_custom_implement/ThreadUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dev/syntax/AppTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/next-rendering/app/dashboard/2.ssr/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/next-rendering/app/dashboard/2.ssr/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/.env.example" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/dashboard/invoices/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/dashboard/invoices/page.tsx" afterDir="false" />
@@ -39,8 +24,8 @@
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/search.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/next.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../step03_socket_thread/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../step03_socket_thread/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_custom_implement/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_custom_implement/Producer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../react-todo-js-main/cypress/e2e/todos.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-todo-js-main/cypress/e2e/todos.cy.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../react-todo-js-main/src/components/ui/IconButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-todo-js-main/src/components/ui/IconButton.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../react-todo-js-main/src/components/ui/NewModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-todo-js-main/src/components/ui/NewModal.jsx" afterDir="false" />
@@ -111,7 +96,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1756174324650</updated>
-      <workItem from="1756174326167" duration="7469000" />
+      <workItem from="1756174326167" duration="7942000" />
     </task>
     <servers />
   </component>
