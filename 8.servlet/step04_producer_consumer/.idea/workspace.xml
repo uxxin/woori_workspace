@@ -1,4 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectId" id="31nyZOm8WM34l8gCsBfE2XzgAEF" />
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0ec2447c-d572-4e71-bd3e-311f1e353a81" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step01_producer_consumer/Consumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step01_producer_consumer/DataQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step01_producer_consumer/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step01_producer_consumer/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step01_producer_consumer/Producer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step01_producer_consumer/ThreadUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_custom_implement/Consumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_custom_implement/DataQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_custom_implement/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_custom_implement/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_custom_implement/Producer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step02_custom_implement/ThreadUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dev/syntax/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/next-rendering/app/dashboard/2.ssr/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/next-rendering/app/dashboard/2.ssr/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/dashboard/invoices/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/dashboard/invoices/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/dashboard/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/dashboard/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/lib/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/lib/data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/query/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/query/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/acme-logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/acme-logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/dashboard/cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/dashboard/cards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/dashboard/latest-invoices.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/dashboard/latest-invoices.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/dashboard/revenue-chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/dashboard/revenue-chart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/invoices/buttons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/invoices/buttons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/invoices/create-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/invoices/create-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/invoices/edit-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/invoices/edit-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/invoices/pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/invoices/pagination.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/invoices/table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/invoices/table.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../step03_socket_thread/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../step03_socket_thread/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-todo-js-main/cypress/e2e/todos.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-todo-js-main/cypress/e2e/todos.cy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-todo-js-main/src/components/ui/IconButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-todo-js-main/src/components/ui/IconButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-todo-js-main/src/components/ui/NewModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-todo-js-main/src/components/ui/NewModal.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="31nyqf09XC3qeiRq5ewrtaoGThS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/woori_workspace/8.servlet/step04_producer_consumer/src/main/java/dev/syntax/step02_custom_implement",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="dev.syntax.step01_producer_consumer" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\woori_workspace\8.servlet\step04_producer_consumer\src\main\java\dev\syntax\step02_custom_implement" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0ec2447c-d572-4e71-bd3e-311f1e353a81" name="Changes" comment="" />
+      <created>1756174324650</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1756174324650</updated>
+      <workItem from="1756174326167" duration="7469000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
 </project>

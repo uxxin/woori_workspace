@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06c8d7a1-9b4f-46bd-8750-916e926c01b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step03_thread_pool/SimpleServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/next-rendering/app/dashboard/2.ssr/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/next-rendering/app/dashboard/2.ssr/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/.env.example" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/dashboard/invoices/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/dashboard/invoices/page.tsx" afterDir="false" />
@@ -25,8 +24,6 @@
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/ui/search.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/next.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/syntax/step03_thread_pool/ThreadPoolServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/step03_thread_pool/ThreadPoolServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../react-todo-js-main/cypress/e2e/todos.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-todo-js-main/cypress/e2e/todos.cy.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../react-todo-js-main/src/components/ui/IconButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-todo-js-main/src/components/ui/IconButton.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../react-todo-js-main/src/components/ui/NewModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-todo-js-main/src/components/ui/NewModal.jsx" afterDir="false" />
@@ -183,7 +180,7 @@
       <updated>1756093250368</updated>
       <workItem from="1756093252260" duration="72000" />
       <workItem from="1756093332246" duration="12335000" />
-      <workItem from="1756167059355" duration="6159000" />
+      <workItem from="1756167059355" duration="6645000" />
     </task>
     <servers />
   </component>
