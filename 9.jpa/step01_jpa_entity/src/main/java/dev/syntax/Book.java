@@ -24,6 +24,14 @@ public class Book {
         this.author = author;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
