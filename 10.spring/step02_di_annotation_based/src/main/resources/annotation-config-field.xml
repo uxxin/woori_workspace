@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xmlns:context attribute 추가 해당 xml 엘리먼트 참고 링크 https://docs.spring.io/spring-framework/reference/core/beans/annotation-config.html -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--
+        Annotation 문법 기반으로 설정을 적용하기 위한 엘리먼트
+        5번 라인의 (xmlns:context~~) 때문에 작성 가능한 옵션
+        @Autowired, @Qualifier 등 의존성 주입용 Annotation들을 활성화하기 위한 엘리먼트
+
+        개발자가 XML 파일에 작성한 <bean>들 간의 설정을 XML 파일이 아닌
+        Bean에 해당하는 클래스의 Bean에 해당하는 클래스의 Annotation을 스캔하여 구성
+    -->
+    <context:annotation-config />
+    <bean id="tapeReader" class="dev.syntax.step01_field.TapeReader">
+        <!-- Tape와 연결하는 별도의 설정 코드가 없는 상태 -->
+    </bean>
+    <bean id="tape" class="dev.syntax.step01_field.Tape"></bean>
+</beans>
