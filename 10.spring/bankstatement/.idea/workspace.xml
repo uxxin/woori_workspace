@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f2eb47c-2df5-4560-afc3-c23bd60ffb18" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/bank/BankStatementAnalyzer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/bank/BankStatementAnalyzerWithJar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/bank/MainApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/bank/model/BankTransaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/bank/parser/BankDataCSVParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/bank/parser/BankDataParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/bank/parser/BankDataTSVParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/syntax/bank/service/BankProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/bank-data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/bank-data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/component-scan-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/empty-bank-data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dev/syntax/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/next-rendering/app/dashboard/2.ssr/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/next-rendering/app/dashboard/2.ssr/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/.env.example" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/dashboard/invoices/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/dashboard/invoices/page.tsx" afterDir="false" />
@@ -79,29 +64,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.App.executor": "Run",
-    "Application.MainApplication.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/woori_workspace/10.spring/bankstatement",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propCompiler",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/woori_workspace/10.spring/bankstatement&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\woori_workspace\10.spring\bankstatement\src\main\resources" />
@@ -147,7 +132,8 @@
       <option name="presentableId" value="Default" />
       <updated>1756710488352</updated>
       <workItem from="1756710490059" duration="1002000" />
-      <workItem from="1756711511350" duration="4964000" />
+      <workItem from="1756711511350" duration="5004000" />
+      <workItem from="1756770609970" duration="3774000" />
     </task>
     <servers />
   </component>
