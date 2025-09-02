@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f2eb47c-2df5-4560-afc3-c23bd60ffb18" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/next-rendering/app/dashboard/2.ssr/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/next-rendering/app/dashboard/2.ssr/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/.env.example" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/dashboard/invoices/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../6.next-js/nextjs-dashboard/app/dashboard/invoices/page.tsx" afterDir="false" />
@@ -134,6 +133,8 @@
       <workItem from="1756710490059" duration="1002000" />
       <workItem from="1756711511350" duration="5004000" />
       <workItem from="1756770609970" duration="3774000" />
+      <workItem from="1756776500252" duration="746000" />
+      <workItem from="1756780548860" duration="1000" />
     </task>
     <servers />
   </component>
