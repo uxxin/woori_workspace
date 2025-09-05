@@ -1,5 +1,6 @@
 package dev.rest.exception;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
 import org.springframework.validation.BindingResult;
@@ -8,16 +9,16 @@ import java.util.List;
 
 @Builder
 @Getter
-// 에러 응답용 DTO
+@Schema(description = "에러 응답 DTO")
 public class ErrorResponse {
 
-    // 에러 코드
+    @Schema(description = "에러 코드", example = "400")
     private String code;
 
-    // 에러 메시지
+    @Schema(description = "에러 메시지", example = "잘못된 요청입니다.")
     private String message;
 
-    // 각 필드별 유효성 검증 에러
+    @Schema(description = "필드 에러 목록")
     private List<FieldError> errors;
 
     @Getter
