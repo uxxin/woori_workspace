@@ -1,5 +1,7 @@
 package dev.rest.service;
 
+import dev.rest.dto.ProductResponse;
+import dev.rest.exception.ProductNotFoundException;
 import dev.rest.model.Product;
 import dev.rest.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,5 +21,14 @@ public class ProductService {
         return (category != null && !category.isBlank())
                 ? productRepository.findByCategory(category, pageable)
                 : productRepository.findAll(pageable);
+    }
+
+    public ProductResponse getProductById(Long id) {
+        // id로 상품 조회
+        // 상품이 존재할 경우 Product 타입의 엔티티를 반환받음(Optional 객체)
+        // 존재하지 않을 경우 ProductNotFound 예외 발생
+        Product product = productRepository.findById(id).orElseThrow(()-> new ProductNotFoundException(id));
+
+        return ProductResponse.from(product);
     }
 }
