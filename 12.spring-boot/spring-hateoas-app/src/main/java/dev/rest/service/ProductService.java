@@ -1,5 +1,6 @@
 package dev.rest.service;
 
+import dev.rest.dto.ProductRequest;
 import dev.rest.dto.ProductResponse;
 import dev.rest.exception.ProductNotFoundException;
 import dev.rest.model.Product;
@@ -30,5 +31,45 @@ public class ProductService {
         Product product = productRepository.findById(id).orElseThrow(()-> new ProductNotFoundException(id));
 
         return ProductResponse.from(product);
+    }
+
+    public ProductResponse createProduct(ProductRequest request) {
+
+        // DTO-> Entity 변환(JPA느 Entity로 관리하기 때문에)
+        Product newProduct = Product.from(request);
+
+        Product createdProduct = productRepository.save(newProduct);
+
+        // Entity -> DTO 변환(응답 처리용)
+        return ProductResponse.from(createdProduct);
+    }
+
+    public ProductResponse updateProduct(Long id, ProductRequest request) {
+
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException(id));
+
+
+        product.setName(request.name());
+        product.setDescription(request.description());
+        product.setPrice(request.price());
+        product.setStock(request.stock());
+        product.setCategory(request.category());
+
+        Product updatedProduct = productRepository.save(product);
+
+        return ProductResponse.from(updatedProduct);
+    }
+
+    public ProductResponse deleteProduct(Long id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException(id));
+
+        // 삭제 전 응답용 DTO로 변환
+        ProductResponse deletedProduct = ProductResponse.from(product);
+
+        productRepository.delete(product); // DB에서 삭제
+
+        return deletedProduct;
     }
 }

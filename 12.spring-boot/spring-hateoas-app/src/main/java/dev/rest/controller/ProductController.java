@@ -1,5 +1,6 @@
 package dev.rest.controller;
 
+import dev.rest.dto.ProductRequest;
 import dev.rest.dto.ProductResponse;
 import dev.rest.model.Product;
 import dev.rest.repository.ProductRepository;
@@ -12,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -49,8 +51,34 @@ public class ProductController {
 
 
     // TODO: 상품 등록
+    @PostMapping
+    public ResponseEntity<ProductResponse> createProduct(@RequestBody ProductRequest request) {
+        ProductResponse response = productService.createProduct(request);
+
+        URI location = URI.create("/api/products/" + response.id());
+
+        return ResponseEntity
+                .created(location)
+                .body(response);
+    }
 
     // TODO: 상품 수정
+    @PutMapping("/{id}")
+    public ResponseEntity<ProductResponse> updateProduct(
+            @PathVariable Long id, // 수정하고 싶은 상품 id
+            @RequestBody ProductRequest request // 수정하고 싶은 데이터(JSON)
+    ) {
+        ProductResponse response = productService.updateProduct(id, request);
+
+        return ResponseEntity.ok(response);
+    }
 
     // TODO: 상품 제거
+    @DeleteMapping("/{id}")
+    public ResponseEntity<ProductResponse> deleteProduct(@PathVariable Long id) {
+
+        ProductResponse deleted = productService.deleteProduct(id);
+
+        return ResponseEntity.ok(deleted);
+    }
 }

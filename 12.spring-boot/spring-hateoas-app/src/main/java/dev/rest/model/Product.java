@@ -1,10 +1,8 @@
 package dev.rest.model;
 
+import dev.rest.dto.ProductRequest;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,10 +15,15 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Setter
     private String name;
+    @Setter
     private String description;
+    @Setter
     private int price;
+    @Setter
     private int stock;
+    @Setter
     private String category;
 
     public Product(String name, String description, int price, int stock, String category) {
@@ -29,6 +32,16 @@ public class Product {
         this.price = price;
         this.stock = stock;
         this.category = category;
+    }
+
+    public static Product from(ProductRequest request) {
+        return new Product(
+                request.name(),
+                request.description(),
+                request.price(),
+                request.stock(),
+                request.category()
+        );
     }
 
 }
