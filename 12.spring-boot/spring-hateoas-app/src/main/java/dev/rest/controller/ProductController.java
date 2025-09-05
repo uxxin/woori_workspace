@@ -5,6 +5,7 @@ import dev.rest.dto.ProductResponse;
 import dev.rest.model.Product;
 import dev.rest.repository.ProductRepository;
 import dev.rest.service.ProductService;
+import jakarta.validation.Valid;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -52,7 +53,7 @@ public class ProductController {
 
     // TODO: 상품 등록
     @PostMapping
-    public ResponseEntity<ProductResponse> createProduct(@RequestBody ProductRequest request) {
+    public ResponseEntity<ProductResponse> createProduct(@Valid @RequestBody ProductRequest request) {
         ProductResponse response = productService.createProduct(request);
 
         URI location = URI.create("/api/products/" + response.id());
