@@ -12,12 +12,12 @@ public class UserController {
     Logger logger = Logger.getLogger("UserController");
 
     public List<User> getUsers() {
-        logger.info("UserController.getUser() 호출 전");
+        //logger.info("UserController.getUser() 호출 전");
         // DB로부터 User 목록을 받았다고 가정
         List<User> users = new ArrayList<>();
         users.add(new User(1, "Tom"));
         users.add(new User(2, "Jerry"));
-        logger.info("UserController.getUser() 호출 후");
+        //logger.info("UserController.getUser() 호출 후");
 
         return users;
     }
