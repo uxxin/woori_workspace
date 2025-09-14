@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: GraphQL
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/bookdb?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update   # (create, update, validate, none ?? ??)
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  graphql:
+    websocket:
+      path: /graphql
+    graphiql:
+      enabled: true   # http://localhost:8080/graphiql ? IDE ?? ??
