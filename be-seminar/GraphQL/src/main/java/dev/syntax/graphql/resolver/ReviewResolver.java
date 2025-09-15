@@ -13,7 +13,6 @@ public class ReviewResolver {
 
     private final Sinks.Many<Review> reviewSink = Sinks.many().multicast().onBackpressureBuffer();
 
-    // 리뷰 publish 시 로그 추가
     public void publishReview(Review review) {
         System.out.println("[publishReview] Publishing review id=" + review.getId() +
                 ", bookId=" + (review.getBook() != null ? review.getBook().getId() : "null") +

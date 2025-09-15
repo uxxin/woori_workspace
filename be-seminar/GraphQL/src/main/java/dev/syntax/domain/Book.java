@@ -22,3 +22,4 @@ public class Book {
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     private List<Review> reviews;
 }
+
