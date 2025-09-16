@@ -25,7 +25,10 @@ public class SecurityConfig {
         http.authorizeRequests().mvcMatchers("/","/users/register").permitAll();
 
         // 전체 사용자 목록을 조회하는 페이지(GET: users)는 ADMIN 역할을 가진 사용자만 접근 가능
-        http.authorizeRequests().mvcMatchers(HttpMethod.POST,"/users").hasRole("ADMIN");
+        http.authorizeRequests().mvcMatchers(HttpMethod.GET,"/users").hasRole("ADMIN");
+
+        // 회원가입은 누구나 가능해야 함.
+        http.authorizeRequests().mvcMatchers(HttpMethod.POST,"/users").permitAll();
 
         // 그 외 다른 모든 경로는 인증된 사용자만 접근할 수 있도록 적용
         http.authorizeRequests().anyRequest().authenticated();

@@ -1,6 +1,7 @@
 package dev.syntax.security.model;
 
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
+@Setter // setter 추가함
 @Getter
 @ToString
 public class User implements UserDetails {
@@ -21,7 +23,7 @@ public class User implements UserDetails {
     private Long id;
 
     private String name;
-    
+
     private String email; // 사용자 계정
 
     private String password;
