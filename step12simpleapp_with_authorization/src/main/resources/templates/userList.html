@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org">
+
+<body>
+
+<h2>Users</h2>
+
+<table id="users">
+    <thead>
+    <tr>
+        <th style="width: 150px;">Name</th>
+        <th style="width: 200px;">email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.name}" />
+        <td th:text="${user.email}" />
+        <td>
+    <span th:each="role, iterStat : ${user.roles}"
+          th:text="${role.name} + ${iterStat.last ? '' : ', '}" />
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
