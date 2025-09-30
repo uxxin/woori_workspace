@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rendering-blocking</title>
+  </head>
+
+  <body>
+    <h1>🍏 apple: 1</h1>
+    <h1>🍏 apple: 2</h1>
+    <h1>🍏 apple: 3</h1>
+
+    <!-- 렌더링 차단 리소스, 3초 지연 후 빨간색으로 변경 -->
+    <link rel="stylesheet" href="http://localhost:4000/3000/css/h1-red.css" />
+
+    <h1>🍏 apple: 4</h1>
+    <h1>🍏 apple: 5</h1>
+    <h1>🍏 apple: 6</h1>
+
+    <!-- 렌더링 차단 리소스, 6초 지연 후 빨간색으로 변경 -->
+    <link rel="stylesheet" href="http://localhost:4000/6000/css/h1-blue.css" />
+
+    <h1>🍏 apple: 7</h1>
+    <h1>🍏 apple: 8</h1>
+    <h1>🍏 apple: 9</h1>
+    <h1>🍏 apple: 10</h1>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ad7a3a59-d03a-489a-8973-7f98feb78995" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../10.spring/bankstatement/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../10.spring/bankstatement/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../10.spring/bankstatement/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../10.spring/bankstatement/src/main/java/dev/syntax/bank/BankStatementAnalyzer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../10.spring/bankstatement/src/main/java/dev/syntax/bank/BankStatementAnalyzerWithJar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../10.spring/bankstatement/src/main/java/dev/syntax/bank/MainApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../10.spring/bankstatement/src/main/java/dev/syntax/bank/model/BankTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../10.spring/bankstatement/src/main/java/dev/syntax/bank/parser/BankDataCSVParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../10.spring/bankstatement/src/main/java/dev/syntax/bank/parser/BankDataParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../10.spring/bankstatement/src/main/java/dev/syntax/bank/parser/BankDataTSVParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../10.spring/bankstatement/src/main/java/dev/syntax/bank/service/BankProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../10.spring/bankstatement/src/main/resources/bank-data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../10.spring/bankstatement/src/main/resources/bank-data.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../10.spring/bankstatement/src/main/resources/empty-bank-data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../10.spring/bankstatement/src/test/java/dev/syntax/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/next-rendering/app/dashboard/2.ssr/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/next-rendering/app/dashboard/2.ssr/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/dashboard/invoices/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/dashboard/invoices/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/dashboard/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/dashboard/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/lib/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/lib/data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/query/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/query/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/acme-logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/acme-logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/dashboard/cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/dashboard/cards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/dashboard/latest-invoices.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/dashboard/latest-invoices.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/dashboard/revenue-chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/dashboard/revenue-chart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/invoices/buttons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/invoices/buttons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/invoices/create-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/invoices/create-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/invoices/edit-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/invoices/edit-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/invoices/pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/invoices/pagination.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/invoices/table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/invoices/table.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/app/ui/search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6.next-js/nextjs-dashboard/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../8.servlet/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../8.servlet/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../8.servlet/filter_interceptor/src/main/java/dev/syntax/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../8.servlet/filter_interceptor/src/main/java/dev/syntax/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../8.servlet/filter_interceptor/src/main/java/dev/syntax/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../8.servlet/filter_interceptor/src/main/java/dev/syntax/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../8.servlet/filter_interceptor/src/main/java/dev/syntax/interceptor/LoggingInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../8.servlet/filter_interceptor/src/main/java/dev/syntax/interceptor/LoggingInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../8.servlet/step04_producer_consumer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../8.servlet/step04_producer_consumer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../8.servlet/step04_producer_consumer/src/main/java/dev/syntax/step03_blocking_queue/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../8.servlet/step04_producer_consumer/src/main/java/dev/syntax/step03_blocking_queue/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../8.servlet/step04_producer_consumer/src/main/java/dev/syntax/step03_blocking_queue/DataQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../8.servlet/step04_producer_consumer/src/main/java/dev/syntax/step03_blocking_queue/DataQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../8.servlet/step04_producer_consumer/src/main/java/dev/syntax/step03_blocking_queue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../8.servlet/step04_producer_consumer/src/main/java/dev/syntax/step03_blocking_queue/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../8.servlet/step04_producer_consumer/src/main/java/dev/syntax/step03_blocking_queue/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../8.servlet/step04_producer_consumer/src/main/java/dev/syntax/step03_blocking_queue/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../8.servlet/step04_producer_consumer/src/main/java/dev/syntax/step03_blocking_queue/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../8.servlet/step04_producer_consumer/src/main/java/dev/syntax/step03_blocking_queue/Producer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../8.servlet/step04_producer_consumer/src/main/java/dev/syntax/step03_blocking_queue/ThreadUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../8.servlet/step04_producer_consumer/src/main/java/dev/syntax/step03_blocking_queue/ThreadUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../react-todo-js-main/cypress/e2e/todos.cy.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../react-todo-js-main/cypress/e2e/todos.cy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../react-todo-js-main/src/components/ui/IconButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../react-todo-js-main/src/components/ui/IconButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../react-todo-js-main/src/components/ui/NewModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../react-todo-js-main/src/components/ui/NewModal.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="325Wi5OuF6JC5timenvvTGf7eFj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ad7a3a59-d03a-489a-8973-7f98feb78995" name="Changes" comment="" />
+      <created>1756711037902</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1756711037902</updated>
+      <workItem from="1756711039043" duration="4000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS display(block/inline)</title>
+  </head>
+
+  <body>
+    <h1>HTML Element의 display 속성 2가지 : Block / Inline</h1>
+
+    <!-- 직접 같이 코드 타이핑하여 학습 -->
+
+    <h1>block</h1>
+    <div style="border: 1px dashed blue">
+      div는 block 속성, 항상 새로운 줄부터 시작, 전체 가로폭(width) 100% 차지
+    </div>
+    <!-- 개발자 도구 열어보면 border가 글씨 없어도 가로폭 전체를 차지하는 것을 볼 수 있음.  -->
+    <p style="border: 1px dashed green">p 태크도 block 속성</p>
+
+    <div style="border: 1px dashed blue; display: inline">
+      div는 block 속성, 항상 새로운 줄부터 시작, 전체 가로폭(width) 100% 차지
+    </div>
+    <!-- 이렇게 display: inline으로 하면 강제로 inline으로 만들기 가능 -->
+    <p style="border: 1px dashed green; display: inline">p 태크도 block 속성</p>
+    <h2>inline</h2>
+    <a style="border: 3px dashed red" href=""
+      >a 태그는 inline 속성, 자신이 필요한 영역(컨텐츠)만큼만 차지</a
+    >
+    <span>span도 inline</span>
+  </body>
+</html>

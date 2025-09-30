@@ -1,0 +1,41 @@
+1. 몇 가지 의존성 추가
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+compileOnly 'org.projectlombok:lombok'
+annotationProcessor 'org.projectlombok:lombok'
+
+학습 내용
+
+1. 시큐리티에서 제공하는 BCrypt, SCrypt 암호인코더 적용
+2. JPA로 사용자 정보 관리
+3. AuthenticationProvider 커스터마이징
+4. 인증된 사용자가 접근 가능한 상품 데이터
+5. 메인 페이지에 사용자 이름 표시하기 위해 SecurityContext 사용
+
+순서
+1. DB 설정
+- Authority, User.java 생성
+- UserRepository.java 생성
+
+2. 사용자 관리 정의
+- CustomUserDetails.java 생성
+- JpaUserDetailsService.java 생성
+
+3. 인증 로직 구현
+- AuthenticationProviderService.java 생성
+- SecurityConfig.java에 AuthenticationProviderService를 빈으로 등록
+
+4. 메인 페이지 구현
+- SecurityConfig.java에 defaultSuccessUrl()지정
+- Product.java 엔티티 생성
+-
+
+5. 애플리케이션 실행, 테스트
+

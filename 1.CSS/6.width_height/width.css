@@ -1,0 +1,15 @@
+.width-default {
+  /* width: 100%; */
+  /* 주석 해제하나 안하나 똑같음. 기본이 100%이기 때문 */
+}
+
+/* px로 사이즈를 조정하는 방법 */
+.width-px {
+  width: 300px;
+  /* border 포함해서 300px */
+}
+
+.width-pct {
+  width: 50%;
+  /* w50p */
+}

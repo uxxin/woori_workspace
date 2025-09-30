@@ -1,0 +1,15 @@
+/* 직접 같이 타이핑하여 학습 */
+* {
+  /* content-box가 기본값( content 만큼만 width가 적용) */
+  box-sizing: border-box;
+}
+
+.box {
+  width: 300px;
+  background-color: skyblue;
+  /* bgco 단축키 */
+  font-size: 50px;
+  padding: 20px;
+  border: 5px dashed blue;
+  margin: 20px;
+}

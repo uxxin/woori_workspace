@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/xsd-configuration.html -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="dev.syntax.step04_constructor_based_di.TapeReader">
+        <constructor-arg name="tape" ref="tapeId"/>
+    </bean>
+
+    <!-- Tape에 대한 빈 설정 정보-->
+    <bean id="tapeId" class="dev.syntax.step04_constructor_based_di.Tape">
+        <!--  -->
+        <constructor-arg name="name" value="아일랜드"/>
+        <constructor-arg name="isWorked" value="true"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xmlns:context attribute 추가 해당 xml 엘리먼트 참고 링크 https://docs.spring.io/spring-framework/reference/core/beans/annotation-config.html -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:annotation-config />
+    <bean id="tapeReader" class="dev.syntax.step02_setter.TapeReader">
+        <!-- Tape와 연결하는 별도의 설정 코드가 없는 상태 -->
+        <property name="tape" ref="tapeId"/>
+    </bean>
+    <bean id="tapeId" class="dev.syntax.step02_setter.Tape">
+        <property name="name" value="아일랜드" />
+        <property name="worked" value="true" />
+    </bean>
+</beans>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- log4j 관련 설정 정보를 작성하는 설정 파일 -->
+
+<!-- status - 설정 파일 자체에 대한 로그 레벨 -->
+<Configuration status="info" >
+  <!-- 설정 파일을 통해 로그 메시지를 어디에 출력할 것인지(ex. 콘솔, 파일) -->
+  <Appenders>
+    <!-- 로그메시지를 어디에 출력할 것인지, Console: 콘솔에 출력 -->
+    <Console name="STDOUT" target="SYSTEM_OUT">
+      <!-- 출력 포맷 -->
+      <PatternLayout
+        pattern="%d{yyyy-MM-dd HH:mm:ss} %p %m%n" />
+      <!-- %d - date 
+         %p - log level 
+         %m - log message 
+         %n - new line more pattern 
+        - https://logging.apache.org/log4j/2.x/manual/layouts.html#patterns -->
+    </Console>
+    
+    <File name="fout" fileName="logs/slftest.log" append="true">
+      <PatternLayout>
+        <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n</Pattern>
+      </PatternLayout>
+    </File>
+  </Appenders>
+  
+  <!-- 로그 레벨 설정 -->
+  <Loggers>
+    
+    <!-- name - 특정 패키지 (Full) 경로, level - 로그 레벨 -->
+    <!-- <Logger name="dev.step02_exlib.another" level="debug"/> -->
+    
+    <!-- Root logger가 처리할 로그 이벤트의 최소 로그레벨 -->
+    <Root level="INFO">
+      <AppenderRef ref="STDOUT" />
+      <AppenderRef ref="fout" />
+    </Root>
+  </Loggers>
+  
+</Configuration>

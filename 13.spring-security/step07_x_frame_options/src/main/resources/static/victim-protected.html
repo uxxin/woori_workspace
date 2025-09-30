@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victim Page</title>
+    <style id="antiClickjack">
+        body {
+            display: none !important;
+        }
+
+        button {
+            margin-top: 80px;
+            padding: 20px;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        if (self === top) {
+            var antiClickjack = document.getElementById("antiClickjack");
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        } else {
+            top.location = self.location;
+        }
+    </script>
+</head>
+
+<body>
+<button onclick="alert('반려동물 1등 쇼핑몰, 마이펫!')">광고 버튼</button>
+</body>
+
+</html>

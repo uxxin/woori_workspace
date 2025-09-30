@@ -1,0 +1,14 @@
+스프링 시큐리티가 제공해주는 x-frame-options 옵션에 따른 차이 비교
+
+1. 사용자는 /hello 경로로 요청, 인증 수행
+2. 인증이 성공할 경우 사용자는 attacker.html 페이지로 리다이렉트됨
+3. 사용자는 영상 보기 버튼을 클릭하지만, 시큐리티의 기본 옵션인 X-Frame-Options: DENY 옵션이 활성화되어 있어서 <iframe>이 동작하지 않음
+4. 악의적인 사용자가 삽입한 페이지가 동작하지 않게됨
+
+
+X-Frame-Options 옵션 비활성화 후 테스트 시나리오
+
+1. SecurityConfig에서 http.headers().frameOptions().disable() 옵션을 추가하여 스프링 시큐리티의 X-Frame-Options 비활성화 옵션을 적용
+2. 사용자는 /hello 경로로 요청, 인증 수행
+3. 인증이 성공할 경우 사용자는 attacker.html 페이지로 리다이렉트됨
+4. 사용자는 영상 보기 버튼을 클릭할 경우, <iframe>으로 내장된 페이지인 victim.html이 동작하게 됨

@@ -1,0 +1,10 @@
+jdbcUrl=jdbc:mysql://localhost:3306/testdb
+username=root
+password=1234
+
+maximumPoolSize=10
+minimumIdle=3 # 최소 유지 개수 3개
+connectionTimeout=5000
+idleTimeout=10000 # 유휴 전환 대기 시간 10초
+keepaliveTime=15000
+maxLifetime=600000

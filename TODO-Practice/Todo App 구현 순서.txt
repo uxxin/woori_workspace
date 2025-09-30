@@ -1,0 +1,69 @@
+Phase0: #0-1. 리액트 프로젝트 생성, Tailwind 설치
+
+	# Vite 빌드툴을 활용하여 프로젝트 생성
+	npm create vite@latest react-todo-js -- --template react
+
+	# Tailwind 설치(https://tailwindcss.com/docs/guides/vite)
+	링크 내 02번[Install Tailwind CSS]부터 진행
+
+Phase1: #1-1. 기본 폴더 구조 생성, 할일 관리 UI 작성, 절대경로(@) 추가(vite.config.js)
+
+	# 기본 폴더 구조
+		src/
+			components/ - 기본적인 컴포넌트들을 작성하는 경로
+				todos/ - 할일 관리(특정 도메인)와 관련된 컴포넌트들만 모아둔 경로
+				ui/ - 도메인과 관련 없이 어느 곳에서든 공통적으로 사용할 수 있는 범용적인 UI
+			constants/ - 상수로 관리할 값들, 함수 등을 모아둔 경로
+			laytous/ - 레이아웃 용도의 경로
+			contexts/ - Context 관련 경로
+			utils/ - 유틸 함수
+
+	# 절대경로(@) 추가 옵션은 선택적인 기능
+
+	# 메인페이지 UI만 구현(기능이 동작하지 않음, Non-interactive)
+
+Phase1: #1-2. 할일 조회 기능 구현
+
+	전통적인 구현 방식에서는 최상단(App.jsx)에서 데이터를 관리,
+	(데이터는 서버에서 받아온 데이터라고 가정)
+	props를 활용해서 필요한 컴포넌트들에게 데이터를 전달해주는 방식
+
+	App.jsx
+		TodoBody.jsx
+			TodoItem ->
+
+Phase1: #1-3. 할일 등록 기능 구현
+
+	- React Portal을 통해 Modal 컴포넌트 구현
+	구현할 컴포넌트: ui/Modal.jsx
+
+	- 할일 등록 처리
+	사용자가 모달에 렌더링된 폼(TodoForm)에 입력한 Title, Summary 값을 받는 처리
+	Add 버튼을 클릭했을 때, 입력받은 값들을 App.jsx로 전달
+	App.jsx에 있는 todos 상태를 업데이트(dummyTodos 배열의 가장 뒤쪽 요소로 추가)
+		- TodoForm에 입력한 값들을 이벤트로 감지하여 JS에서 조작할 수 있게 처리
+		- 입력된 값들을 App.jsx(최상위)로 전달하는 처리
+		- App.jsx에서 전달받은 값들을 가지고 배열의 요소로(하나의 Todo) 추가
+		- 새롭게 추가된 할일 목록 데이터를 가지고 화면을 다시 렌더링하는 처리
+
+Phase1: #1-4. 할일 수정 기능 구현
+
+	- TodoForm 재활용
+	- Modal의 타이틀, 버튼의 텍스트를(Add -> Update) 변경
+	- 수정 기능 잘 동작하게
+
+Phase1: #1-5. 할일 제거 기능 구현
+	- 선택된 할일 ID를 받아 Array.filter()를 활용하여 구현
+	- 휴지통 아이콘 클릭하면 할일이 바로 제거됨
+
+Phase1: #1-6. 할일 필터링 기능 구현
+	- 카테고리별 필터링되도록 구현
+
+(진행 완료) Phase1: #1-7. 독자 기능 구현
+	- 랜덤 4팀 17:00에 발표
+
+Phase2: #2-2. Modal 컴포넌트 개선(NewModal.jsx)
+
+Phase2: #2-1. useReducer + Context API로 리팩토링
+
+Phase3: #3-1. 일부 컴포넌트 children Props로 변경

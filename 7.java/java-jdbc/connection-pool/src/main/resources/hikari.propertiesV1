@@ -1,0 +1,10 @@
+jdbcUrl=jdbc:mysql://localhost:3306/testdb
+username=root
+password=1234
+
+# HikariCP connection pool settings
+maximumPoolSize=10      # 최대 10개의 커넥션 유지
+connectionTimeout=5000  # 5초 동안 커넥션을 기다림
+minimumIdle=3
+idleTimeout=10000
+maxLifetime=1800000

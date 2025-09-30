@@ -1,0 +1,26 @@
+<<<<<<< HEAD
+/* 직접 같이 타이핑하여 학습 */
+=======
+/* 직접 같이 타이핑하여 학습 */
+
+html, body{
+    height: 100%;
+}
+
+.height-default{
+    border: 2px solid greenyellow;
+}
+
+.height-px{
+    height: 300px;
+    border: 2px dashed orange;
+}
+
+
+/* body가 웹 페이지가 전체가 아니여서 50%를 적용해도 안됨. 
+50% 적용하고 싶으면 일단 body와 html에 100% 적용이 필요 */
+.height-pct{
+    height: 50%;  /* h50p */
+    border: 2px dashed tomato;
+}
+>>>>>>> 0b13971c6e0e0855585277edc4cd8c59ff7d2166
