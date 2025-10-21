@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: payment-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/msa_step02_payment?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: create
+      dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+
+# 실패 유발 시나리오용 랜덤값 설정
+simulation:
+  payment:
+    success-rate: 70  # 0-100 퍼센트
+
+
+# Eureka 설정
+eureka:
+  #client 관련 설정
+  client:
+    service-url:
+      # eureka 서버 포트
+      defaultZone: http://localhost:8761/eureka
+    instance:
+      # 10초마다 heartbeat 전송(기본값:30초)
+      lease-renewal-interval-in-seconds: 10
+      # Eureka 서버에서 이 인스턴스를 죽은 것으로 간주하기까지의 시간(기본값:90초)
+      lease-expiration-duration-in-seconds: 20
+
+server:
+  port: 8081

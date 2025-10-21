@@ -1,0 +1,10 @@
+Eureka Server 적용 방법
+
+- Spring Cloud에서 최대한 추상화를 해두었음
+개발자가 주로 해야할 일
+1. 해당 기능(Service Discovery)을 활성화하는 @Annotation 적용
+2. application.yml과 같은 설정 파일에 용도에 따라 설정값 적용
+
+-----
+실제 적용 방법
+1. MainApplication.java에 @EnableEurekaServer 어노테이션 적용
